@@ -17,7 +17,7 @@
 
             chrome.windows.getCurrent({populate: true}, function (current_window) {
 
-                var results = window.fuzzy.filter(query.replace(all_colons, ' '), current_window.tabs, fuzzy_options);
+                var results = window.fuzzy.filter(query.replace(all_colons, ''), current_window.tabs, fuzzy_options);
 
                 // Let's remember these guys.
                 current_window_tabs = current_window.tabs;
