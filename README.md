@@ -31,6 +31,10 @@ Thank You
 * [Font Awesome](http://fortawesome.github.io/Font-Awesome/) for the logo, i.e. `icon-folder-close (&#xf07b;)` + `icon-terminal (&#xf120;)`.
 * [Sublime Text](http://www.sublimetext.com/) for the inspiration (i.e. `command+T/P` on OSX, `ctrl+P` on Linux and Windows).
 
+Development
+------------
+[Fuse.js](http://kiro.me/projects/fuse.html) seems like a very nice fuzzy search implementation, too, but only supports queries of up to 32 characters and it does not report on the actual characters matched ([yet?](https://github.com/krisk/Fuse/issues/6)).
+
 
 License
 ---------
