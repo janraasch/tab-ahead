@@ -3,69 +3,51 @@
     'use strict';
 
     // Put together `typeahead` options.
-    var source = function (query, process) {
+    var current_window_tabs = [],
+        string_separator = ':::::',
+        all_colons = /:/g,
+        fuzzy_options = {
+            pre: '<strong class="text-info">',
+            post: '</strong>',
+            extract: function (el) {
+                return el.title + string_separator + el.url;
+            }
+        },
+        source = function (query, process) {
 
             chrome.windows.getCurrent({populate: true}, function (current_window) {
 
-                process(current_window.tabs);
+                var results = window.fuzzy.filter(query.replace(all_colons, ' '), current_window.tabs, fuzzy_options);
+
+                // Let's remember these guys.
+                current_window_tabs = current_window.tabs;
+                process(results);
 
             });
 
         },
         matcher = function (item) {
-
-            var query_regexp = new RegExp(this.query, 'i');
-
-            return item.title.match(query_regexp) || item.url.match(query_regexp);
+            return true;
         },
         sorter = function (items) {
-
-            var query_regexp = new RegExp(this.query, 'i'),
-                title_and_url = [],
-                title = [],
-                url = [],
-                tab_indices = [],
-                item;
-
-            while (items.length) {
-                item = items.shift();
-
-                if (item.title.match(query_regexp)) {
-                    if (item.url.match(query_regexp)) {
-                        title_and_url.push(item);
-                    } else {
-                        title.push(item);
-                    }
-                } else {
-                    if (item.url.match(query_regexp)) {
-                        url.push(item);
-                    }
-                }
-            }
-
-            return title_and_url.concat(title, url);
+            return items;
         },
         highlighter = function (item) {
 
-            var query = this.query.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, '\\$&'),
-                highlight = function (string) {
-                    return string.replace(new RegExp('(' + query + ')', 'ig'), function ($1, match) {
-                        return '<strong class="text-info">' + match + '</strong>';
-                    });
-                },
-                title_highlighted = highlight(item.title),
-                url_highlighted = highlight(item.url),
+            var matches = item.string.split(string_separator),
+                title_highlighted = matches[0],
+                url_highlighted = matches[1],
                 result = '<div class="title">' + title_highlighted + '</div>' + '<small class="muted url">' + url_highlighted + '</small>';
 
             return result;
         },
         updater = function (item) {
 
-            chrome.tabs.update(item.id, {
+            chrome.tabs.update(item.original.id, {
                 selected: true
             });
 
-            return item.title;
+            return item.original.title;
         };
 
     //

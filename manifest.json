@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Tab Ahead",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Tab Ahead let's you type ahead to quickly find open tabs by title and url.",
     "icons": {
         "128": "icon128.png"
@@ -17,5 +17,15 @@
     "permissions": [
         "tabs"
     ],
-    "offline_enabled": true
+    "offline_enabled": true,
+    "commands": {
+        "_execute_browser_action": {
+            "suggested_key": {
+                "windows": "Alt+T",
+                "mac": "Alt+T",
+                "chromeos": "Alt+T",
+                "linux": "Alt+T"
+            }
+        }
+    }
 }

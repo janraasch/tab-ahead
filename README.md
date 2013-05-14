@@ -9,17 +9,25 @@ Installation
 Go to the [Tab Ahead](https://chrome.google.com/webstore/detail/tab-ahead/naoajjeoiblmpegfelhkapanmmaaghmi) page on the [Chrome Web Store](https://chrome.google.com/webstore/) and click `Add To Chrome`.
 
 
-Development
+Keyboard Shortcut
+-------------------
+* Press `Alt+T` to quickly open the search dialog.
+* Navigate to your [Chrome Extensions](chrome://extensions/) and click `Keyboard shortcuts` to change or remove the default shortcut.
+
+
+Version History
 ------------
-* Fussy/fussier search would be nice.
-* Add [lunr.js](http://lunrjs.com/) to the mix.
+* v1.0.1 - Add [fuzzy](http://mattyork.github.io/fuzzy/) search.
+* v1.0.0 - Initial release.
 
 
 Thank You
 ------------
+* [Fuzzy](http://mattyork.github.io/fuzzy/) for the `fuzzy` filter.
 * [Bootstrap](http://twitter.github.io/bootstrap/) for the `<input id="typeahead">` field.
 * [Flatstrap](http://littlesparkvt.com/flatstrap/) for the lack of rounded corners and gradients.
 * [Font Awesome](http://fortawesome.github.io/Font-Awesome/) for the logo, i.e. `icon-folder-close (&#xf07b;)` + `icon-terminal (&#xf120;)`.
+* [Sublime Text](http://www.sublimetext.com/) for the inspiration (i.e. `command+T` on OSX, `ctrl+P` on Linux and Windows).
 
 
 License

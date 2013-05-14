@@ -1,0 +1,33 @@
+{
+    "name": "tab-ahead",
+    "description": "Chrome Extension that helps you to quickly find open tabs by title and url.",
+    "homepage": "https://github.com/janraasch/tab-ahead",
+    "keywords": [
+        "chrome",
+        "extension",
+        "tabs",
+        "fuzzy",
+        "search"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/janraasch/tab-ahead.git"
+    },
+    "version": "1.0.1",
+    "author": {
+        "name": "Jan Raasch",
+        "url": "janraasch.com"
+    },
+    "dependencies": {
+        "fuzzy": ">=0.1.0"
+    },
+    "devDependencies": {
+        "uglify-js": ">=2.3.3"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/janraasch/tab-ahead/blob/master/LICENSE"
+        }
+    ]
+}
