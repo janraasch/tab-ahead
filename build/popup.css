@@ -15,7 +15,6 @@ body {
 }
 
 .title {
- /*width: 437px;*/
  width: 458px;
  text-overflow: ellipsis;
  overflow: hidden;
@@ -29,5 +28,9 @@ body {
 }
 
 .active .text-info {
+ color: inherit;
+}
+
+.active .muted {
  color: inherit;
 }
