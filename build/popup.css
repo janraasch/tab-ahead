@@ -8,12 +8,6 @@ body {
  width: 500px;
 }
 
-.favicon {
- max-width: 16px;
- margin-right: 5px;
- float: left;
-}
-
 .title {
  width: 458px;
  text-overflow: ellipsis;
@@ -27,10 +21,15 @@ body {
  display: block;
 }
 
-.active .text-info {
- color: inherit;
+.dropdown-menu {
+ background-color: rgb(233, 233, 233);
 }
 
-.active .muted {
+.muted {
+ color: rgb(100, 100, 100);
+}
+
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+ background-color: rgb(209, 209, 209);
  color: inherit;
 }

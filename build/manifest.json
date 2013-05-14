@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Tab Ahead",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Tab Ahead let's you type ahead to quickly find open tabs by title and url.",
     "icons": {
         "128": "icon128.png"
