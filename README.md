@@ -3,7 +3,7 @@ Tab Ahead
 
 [Chrome Extension](https://chrome.google.com/webstore/detail/tab-ahead/naoajjeoiblmpegfelhkapanmmaaghmi) that helps you to quickly find open tabs by title and url.
 
-*This is Sublime Text's `Goto Anything...` for your Chrome Tabs.*
+*Bringing Sublime Text's `Goto Anything...` to your Chrome Tabs.*
 
 Installation
 ------------
