@@ -14,7 +14,7 @@ Go to the [Tab Ahead](https://chrome.google.com/webstore/detail/tab-ahead/naoajj
 Keyboard Shortcut
 -------------------
 * Press `Alt+T` to quickly open the search dialog.
-* Navigate to your Chrome Extensions `chrome://extensions/` and click `Keyboard shortcuts` to change or remove the default shortcut.
+* Navigate to **Window > Extensions** and click `Keyboard shortcuts` to change or remove the default shortcut.
 
 
 Version History
