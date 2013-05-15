@@ -1,10 +1,9 @@
-/*global chrome, window*/
-(function ($) {
+/*global window*/
+(function ($, fuzzy, chrome) {
     'use strict';
 
     // Put together `typeahead` options.
-    var current_window_tabs = [],
-        string_separator = ':::::',
+    var string_separator = ':::::',
         all_colons = /:/g,
         fuzzy_options = {
             pre: '<strong class="text-info">',
@@ -17,10 +16,8 @@
 
             chrome.windows.getCurrent({populate: true}, function (current_window) {
 
-                var results = window.fuzzy.filter(query.replace(all_colons, ''), current_window.tabs, fuzzy_options);
+                var results = fuzzy.filter(query.replace(all_colons, ''), current_window.tabs, fuzzy_options);
 
-                // Let's remember these guys.
-                current_window_tabs = current_window.tabs;
                 process(results);
 
             });
@@ -86,4 +83,12 @@
         highlighter: highlighter,
         items: 10
     });
-}(window.jQuery));
+
+    // Do not `submit` form,
+    // but reset input to empty string.
+    $('form').on('submit', function (e) {
+        $('#typeahead').val('');
+        return false;
+    });
+
+}(window.jQuery, window.fuzzy, window.chrome));
