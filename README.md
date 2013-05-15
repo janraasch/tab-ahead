@@ -19,6 +19,7 @@ Keyboard Shortcut
 
 Version History
 ------------
+* v1.0.4 - Fix UI glitch.
 * v1.0.3 - Improve UI.
 * v1.0.2 - Small improvements.
 * v1.0.1 - Add [fuzzy](http://mattyork.github.io/fuzzy/) search.
