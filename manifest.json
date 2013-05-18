@@ -4,6 +4,7 @@
     "version": "1.0.4",
     "description": "Tab Ahead let's you type ahead to quickly find open tabs by title and url.",
     "icons": {
+        "48": "icon48.png",
         "128": "icon128.png"
     },
     "browser_action": {
