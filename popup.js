@@ -14,7 +14,9 @@
         },
         source = function (query, process) {
 
-            chrome.windows.getCurrent({populate: true}, function (current_window) {
+            chrome.windows.getCurrent({
+                populate: true
+            }, function (current_window) {
 
                 var results = fuzzy.filter(query.replace(all_colons, ''), current_window.tabs, fuzzy_options);
 
@@ -37,14 +39,6 @@
                 result = '<div class="title">' + title_highlighted + '</div>' + '<small class="muted url">' + url_highlighted + '</small>';
 
             return result;
-        },
-        updater = function (item) {
-
-            chrome.tabs.update(item.original.id, {
-                selected: true
-            });
-
-            return item.original.title;
         };
 
     //
@@ -68,15 +62,29 @@
         return this;
     };
     $.fn.typeahead.Constructor.prototype.select = function () {
-        var val = this.$menu.find('.active').data('value'); // Monkey patched.
+        var item = this.$menu.find('.active').data('value'); // Monkey patched.
 
-        this.$element.val(this.updater(val)).change();
+        //
+        // Workaround
+        // Fixes some weird timing issue, which
+        // prevented the popup from being closed,
+        // during tab switching. Popup disappeared,
+        // but was still visible as a separate window,
+        // when showing all Chrome windows.
+        //
+
+        /*global setTimeout*/
+        setTimeout(function () {
+            chrome.tabs.update(item.original.id, {
+                selected: true
+            });
+        }, 1);
+
         return this.hide();
     };
 
     // Init `typeahead`.
     $('#typeahead').typeahead({
-        updater: updater,
         source: source,
         matcher: matcher,
         sorter: sorter,
