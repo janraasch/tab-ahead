@@ -19,6 +19,7 @@ Keyboard Shortcut
 
 Version History
 ------------
+* v1.0.5 - Fix issue with popup sometimes not closing as exspected.
 * v1.0.4 - Fix UI glitch.
 * v1.0.3 - Improve UI.
 * v1.0.2 - Small improvements.
