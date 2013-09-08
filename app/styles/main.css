@@ -1,5 +1,3 @@
-@charset 'UTF-8';
-
 body {
  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgb(238, 238, 238)), color-stop(1, rgb(248, 248, 248)));
 }

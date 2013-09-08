@@ -25,7 +25,7 @@
             });
 
         },
-        matcher = function (item) {
+        matcher = function () {
             return true;
         },
         sorter = function (items) {
@@ -94,7 +94,7 @@
 
     // Do not `submit` form,
     // but reset input to empty string.
-    $('form').on('submit', function (e) {
+    $('form').on('submit', function () {
         $('#typeahead').val('');
         return false;
     });
