@@ -16,7 +16,6 @@
     "grunt-usemin": "~0.1.10",
     "grunt-concurrent": "~0.3.0",
     "load-grunt-tasks": "~0.1.0",
-    "grunt-chrome-manifest": "~0.1.0",
     "time-grunt": "~0.1.1",
     "grunt-jslint": "~1.0.0",
     "grunt-contrib-csslint": "~0.1.2"
