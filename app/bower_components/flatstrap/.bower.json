@@ -1,0 +1,14 @@
+{
+  "name": "flatstrap",
+  "homepage": "https://github.com/littlesparkvt/flatstrap",
+  "_release": "master",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "d5ae75fd82f914c547eb3594c68fbdca5a2f7e61"
+  },
+  "_source": "git://github.com/littlesparkvt/flatstrap.git",
+  "_target": "*",
+  "_originalSource": "flatstrap",
+  "_direct": true
+}

@@ -1,0 +1,42 @@
+{
+  "name": "fuzzy",
+  "description": "small, standalone fuzzy search / fuzzy filter. browser or node",
+  "homepage": "https://github.com/myork/fuzzy",
+  "author": {
+    "name": "Matt York",
+    "email": "york.matt@gmail.com",
+    "url": "mattyork.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/myork/fuzzy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/myork/fuzzy/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/myork/fuzzy/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/fuzzy.js",
+  "scripts": [
+    "lib/fuzzy.js"
+  ],
+  "keywords": [
+    "fuzzy",
+    "search",
+    "filter"
+  ],
+  "_release": "master",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "19cb3bd8880475d5fafa5ab5adad51de5687554e"
+  },
+  "_source": "git://github.com/mattyork/fuzzy.git",
+  "_target": "*",
+  "_originalSource": "fuzzy-search",
+  "_direct": true
+}
