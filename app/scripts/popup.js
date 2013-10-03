@@ -76,11 +76,16 @@
         /*global setTimeout*/
         setTimeout(function () {
             chrome.tabs.update(item.original.id, {
-                selected: true
+                active: true
             });
         }, 1);
 
-        return this.hide();
+        //
+        // Ok, now suddenly this caused
+        // the popup to stay open.
+        // return this.hide();
+        //
+        return;
     };
 
     // Init `typeahead`.
