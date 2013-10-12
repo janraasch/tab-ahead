@@ -156,7 +156,7 @@ module.exports = function (grunt) {
         compress: {
             dist: {
                 options: {
-                    archive: 'package/Tab Ahead.zip'
+                    archive: 'zip/TabAhead.zip'
                 },
                 files: [{
                     expand: true,
