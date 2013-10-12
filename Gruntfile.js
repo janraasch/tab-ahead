@@ -32,9 +32,9 @@ module.exports = function (grunt) {
             options: {
                 spawn: false
             },
-            jslint: {
+            jshint: {
                 files: ['<%= yeoman.app %>/scripts/{,*/}*.js', 'Gruntfile.js', '<%= yeoman.app %>/*.json'],
-                tasks: ['jslint']
+                tasks: ['jshint']
             },
             csslint: {
                 files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
@@ -55,10 +55,14 @@ module.exports = function (grunt) {
         },
 
         jshint: {
+            options: {
+                jshintrc: '.jshintrc'
+            },
             all: [
                 'Gruntfile.js',
                 '<%= yeoman.app %>/scripts/*.js',
-                '<%= yeoman.app %>/*.json'            ]
+                '<%= yeoman.app %>/*.json'
+            ]
         },
 
         csslint: {
@@ -126,7 +130,7 @@ module.exports = function (grunt) {
 
         concurrent: {
             lint: [
-                'jslint',
+                'jshint',
                 'csslint'
             ],
             dist: [
