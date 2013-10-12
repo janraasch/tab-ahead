@@ -47,7 +47,7 @@ Development
 ------------
 [Fuse.js](http://kiro.me/projects/fuse.html) seems like a very nice fuzzy search implementation, too, but only supports queries of up to 32 characters and it does not report on the actual characters matched ([yet?](https://github.com/krisk/Fuse/issues/6)).
 
-Contributung
+Contributing
 --------------
 Pull requests and issues are very welcome.
 
