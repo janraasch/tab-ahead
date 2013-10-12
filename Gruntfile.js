@@ -54,10 +54,10 @@ module.exports = function (grunt) {
             }
         },
 
-        jslint: {
+        jshint: {
             all: [
                 'Gruntfile.js',
-                '<%= yeoman.app %>/scripts/{,*/}*.js',
+                '<%= yeoman.app %>/scripts/*.js',
                 '<%= yeoman.app %>/*.json'            ]
         },
 
