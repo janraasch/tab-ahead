@@ -37,6 +37,12 @@ Thank You
 * [Font Awesome](http://fortawesome.github.io/Font-Awesome/) for the logo, i.e. `icon-folder-close (&#xf07b;)` + `icon-terminal (&#xf120;)`.
 * [Sublime Text](http://www.sublimetext.com/) for the inspiration (i.e. `command+T/P` on OSX, `ctrl+P` on Linux and Windows).
 
+Alternatives
+-------------
+* [TabJuggler](https://chrome.google.com/webstore/detail/tabjuggler/jgiplclhploodgnkcljjgddajfbmafmp/)
+* [TabManager](https://chrome.google.com/webstore/detail/tab-manager/coonecdghnepgiblpccbbihiahajndda/)
+* [Vimium](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb/)
+
 Development
 ------------
 [Fuse.js](http://kiro.me/projects/fuse.html) seems like a very nice fuzzy search implementation, too, but only supports queries of up to 32 characters and it does not report on the actual characters matched ([yet?](https://github.com/krisk/Fuse/issues/6)).
@@ -49,12 +55,6 @@ Pull requests and issues are very welcome.
 * `grunt test` for linting and running tests.
 * `grunt build` for building the extension and generating the dist `.zip`.
 * `grunt` to get your development going. This will start a `watch` task running tests, whenever files are changed.
-
-Alternatives
--------------
-* [TabJuggler](https://chrome.google.com/webstore/detail/tabjuggler/jgiplclhploodgnkcljjgddajfbmafmp/)
-* [TabManager](https://chrome.google.com/webstore/detail/tab-manager/coonecdghnepgiblpccbbihiahajndda/)
-* [Vimium](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb/)
 
 License
 ---------
