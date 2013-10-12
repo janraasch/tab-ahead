@@ -1,4 +1,4 @@
-/*global window*/
+/*global jQuery, fuzzy, chrome, setTimeout*/
 (function ($, fuzzy, chrome) {
     'use strict';
 
@@ -73,7 +73,6 @@
         // when showing all Chrome windows.
         //
 
-        /*global setTimeout*/
         setTimeout(function () {
             chrome.tabs.update(item.original.id, {
                 active: true
@@ -104,4 +103,4 @@
         return false;
     });
 
-}(window.jQuery, window.fuzzy, window.chrome));
+}(jQuery, fuzzy, chrome, setTimeout));
