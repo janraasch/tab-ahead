@@ -1,12 +1,6 @@
 /*jslint node: true*/
 
-// Generated on 2013-09-08 using generator-chrome-extension 0.2.4
-
-// # Globbing
-// for performance reasons we're only matching one level down:
-// 'test/spec/{,*/}*.js'
-// use this if you want to recursively match all subfolders:
-// 'test/spec/**/*.js'
+// Generated using generator-chrome-extension 0.2.4
 
 module.exports = function (grunt) {
     'use strict';
@@ -40,7 +34,7 @@ module.exports = function (grunt) {
                     '<%= yeoman.test %>/{,*/}*{.js,.json}',
                     '*.js'
                 ],
-                tasks: ['jshint']
+                tasks: ['jshint', 'karma:watch:run']
             },
             csslint: {
                 files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
@@ -83,7 +77,12 @@ module.exports = function (grunt) {
             options: {
                 configFile: 'karma.conf.js'
             },
-            e2e: {}
+            e2e: {},
+            watch: {
+                autoWatch: false,
+                background: true,
+                singleRun: false
+            }
         },
 
         useminPrepare: {
@@ -198,6 +197,7 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('build', [
+        'test',
         'clean:dist',
         'useminPrepare',
         'concurrent:dist',
@@ -210,7 +210,8 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('default', [
-        'test',
-        'build'
+        'build',
+        'karma:watch',
+        'watch'
     ]);
 };
