@@ -14,7 +14,8 @@ module.exports = function (grunt) {
     // Configurable paths.
     var yeomanConfig = {
         app: 'app',
-        dist: 'dist'
+        dist: 'dist',
+        test: 'test'
     };
 
     // Show elapsed time at the end.
@@ -33,7 +34,12 @@ module.exports = function (grunt) {
                 spawn: false
             },
             jshint: {
-                files: ['<%= yeoman.app %>/scripts/{,*/}*.js', 'Gruntfile.js', '<%= yeoman.app %>/*.json'],
+                files: [
+                    '<%= yeoman.app %>/scripts/{,*/}*.js',
+                    '<%= yeoman.app %>/*.json',
+                    '<%= yeoman.test %>/{,*/}*{.js,.json}',
+                    '*.js'
+                ],
                 tasks: ['jshint']
             },
             csslint: {
@@ -59,9 +65,10 @@ module.exports = function (grunt) {
                 jshintrc: '.jshintrc'
             },
             all: [
-                'Gruntfile.js',
+                '*.js',
                 '<%= yeoman.app %>/scripts/*.js',
-                '<%= yeoman.app %>/*.json'
+                '<%= yeoman.app %>/*.json',
+                '<%= yeoman.test %>/{,*/}*{.js,.json}'
             ]
         },
 
@@ -70,6 +77,13 @@ module.exports = function (grunt) {
                 'gradients': false
             },
             all: ['<%= yeoman.app %>/styles/{,*/}*.css']
+        },
+
+        karma: {
+            options: {
+                configFile: 'karma.conf.js'
+            },
+            e2e: {}
         },
 
         useminPrepare: {
@@ -129,9 +143,10 @@ module.exports = function (grunt) {
         },
 
         concurrent: {
-            lint: [
+            test: [
                 'jshint',
-                'csslint'
+                'csslint',
+                'karma:e2e'
             ],
             dist: [
                 'imagemin',
@@ -179,7 +194,7 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('test', [
-        'concurrent:lint'
+        'concurrent:test'
     ]);
 
     grunt.registerTask('build', [
