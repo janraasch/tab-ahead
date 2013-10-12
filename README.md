@@ -41,6 +41,14 @@ Development
 ------------
 [Fuse.js](http://kiro.me/projects/fuse.html) seems like a very nice fuzzy search implementation, too, but only supports queries of up to 32 characters and it does not report on the actual characters matched ([yet?](https://github.com/krisk/Fuse/issues/6)).
 
+Contributung
+--------------
+Pull requests and issues are very welcome.
+
+### Available Grunt Commands
+* `grunt test` for linting and running tests.
+* `grunt build` for building the extension and generating the dist `.zip`.
+* `grunt` to get your development going. This will start a `watch` task running tests, whenever files are changed.
 
 Alternatives
 -------------
