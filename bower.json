@@ -2,10 +2,12 @@
   "name": "tab-ahead",
   "version": "0.0.0",
   "dependencies": {
-    "bootstrap": "2.3.2",
     "fuzzy-search": "*",
-    "flatstrap": "*"
+    "flatstrap": "*",
+    "jquery": "2.0.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jasmine-jquery": "1.5.91"
+  },
   "private": true
 }

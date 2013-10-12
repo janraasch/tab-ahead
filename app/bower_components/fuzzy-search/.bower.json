@@ -37,6 +37,5 @@
   },
   "_source": "git://github.com/mattyork/fuzzy.git",
   "_target": "*",
-  "_originalSource": "fuzzy-search",
-  "_direct": true
+  "_originalSource": "fuzzy-search"
 }
