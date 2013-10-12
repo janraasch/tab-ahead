@@ -1,0 +1,28 @@
+{
+    "indentation": {
+        "value": 4
+    },
+    "max_line_length": {
+        "value": "120"
+    },
+    "no_plusplus": {
+        "level": "error"
+    },
+    "line_endings": {
+        "level": "error",
+        "value": "unix"
+    },
+    "space_operators": {
+        "level": "error"
+    },
+    "newlines_after_classes": {
+        "value": 3,
+        "level": "error"
+    },
+    "no_stand_alone_at": {
+        "level": "error"
+    },
+    "arrow_spacing": {
+        "level": "error"
+    }
+}
