@@ -1,106 +1,71 @@
-/*global jQuery, fuzzy, chrome, setTimeout*/
-(function ($, fuzzy, chrome) {
-    'use strict';
-
-    // Put together `typeahead` options.
-    var string_separator = ':::::',
-        all_colons = /:/g,
-        fuzzy_options = {
-            pre: '<strong class="text-info">',
-            post: '</strong>',
-            extract: function (el) {
-                return el.title + string_separator + el.url;
-            }
-        },
-        source = function (query, process) {
-
-            chrome.windows.getCurrent({
-                populate: true
-            }, function (current_window) {
-
-                var results = fuzzy.filter(query.replace(all_colons, ''), current_window.tabs, fuzzy_options);
-
-                process(results);
-
-            });
-
-        },
-        matcher = function () {
-            return true;
-        },
-        sorter = function (items) {
-            return items;
-        },
-        highlighter = function (item) {
-
-            var matches = item.string.split(string_separator),
-                title_highlighted = matches[0],
-                url_highlighted = matches[1],
-                result = '<div class="title">' + title_highlighted + '</div>' + '<small class="muted url">' + url_highlighted + '</small>';
-
-            return result;
-        };
-
-    //
-    // Quick and dirty monkey patch
-    // implementing `$.fn.data` instead of
-    // using `$.fn.attr('data-value')`
-    // to be able to handle `item` objects
-    // instead of simple strings.
-    //
-    $.fn.typeahead.Constructor.prototype.render = function (items) {
-        var that = this;
-
-        items = $(items).map(function (i, item) {
-            i = $(that.options.item).data('value', item); // Monkey patched.
-            i.find('a').html(that.highlighter(item));
-            return i[0];
+(function() {
+  window.tabahead = function($, fuzzy, chrome, setTimeout) {
+    var all_colons, fuzzy_options, highlighter, matcher, sorter, source, string_separator;
+    string_separator = ':::::';
+    all_colons = /:/g;
+    fuzzy_options = {
+      pre: '<strong class="text-info">',
+      post: '</strong>',
+      extract: function(el) {
+        return "" + el.title + string_separator + el.url;
+      }
+    };
+    source = function(query, process) {
+      return chrome.windows.getCurrent({
+        populate: true
+      }, function(current_window) {
+        var results;
+        results = fuzzy.filter(query.replace(all_colons, ''), current_window.tabs, fuzzy_options);
+        return process(results);
+      });
+    };
+    matcher = function() {
+      return true;
+    };
+    sorter = function(items) {
+      return items;
+    };
+    highlighter = function(item) {
+      var matches, title_highlighted, url_highlighted;
+      matches = item.string.split(string_separator);
+      title_highlighted = matches[0], url_highlighted = matches[1];
+      return "<div class=\"title\">" + title_highlighted + "</div><small class=\"muted url\">" + url_highlighted + "</small>";
+    };
+    $.fn.typeahead.Constructor.prototype.render = function(items) {
+      var _this = this;
+      items = ($(items)).map(function(i, item) {
+        i = ($(_this.options.item)).data('value', item);
+        (i.find('a')).html(_this.highlighter(item));
+        return i[0];
+      });
+      items.first().addClass('active');
+      this.$menu.html(items);
+      return this;
+    };
+    $.fn.typeahead.Constructor.prototype.select = function() {
+      var item;
+      item = (this.$menu.find('.active')).data('value');
+      setTimeout(function() {
+        return chrome.tabs.update(item.original.id, {
+          active: true
         });
-
-        items.first().addClass('active');
-        this.$menu.html(items);
-        return this;
+      }, 1);
     };
-    $.fn.typeahead.Constructor.prototype.select = function () {
-        var item = this.$menu.find('.active').data('value'); // Monkey patched.
-
-        //
-        // Workaround
-        // Fixes some weird timing issue, which
-        // prevented the popup from being closed,
-        // during tab switching. Popup disappeared,
-        // but was still visible as a separate window,
-        // when showing all Chrome windows.
-        //
-
-        setTimeout(function () {
-            chrome.tabs.update(item.original.id, {
-                active: true
-            });
-        }, 1);
-
-        //
-        // Ok, now suddenly this caused
-        // the popup to stay open.
-        // return this.hide();
-        //
-        return;
-    };
-
-    // Init `typeahead`.
-    $('#typeahead').typeahead({
-        source: source,
-        matcher: matcher,
-        sorter: sorter,
-        highlighter: highlighter,
-        items: 10
+    ($('#typeahead')).typeahead({
+      source: source,
+      matcher: matcher,
+      sorter: sorter,
+      highlighter: highlighter,
+      items: 10
     });
-
-    // Do not `submit` form,
-    // but reset input to empty string.
-    $('form').on('submit', function () {
-        $('#typeahead').val('');
-        return false;
+    return ($('form')).on('submit', function() {
+      ($('#typeahead')).val('');
+      return false;
     });
+  };
 
-}(jQuery, fuzzy, chrome, setTimeout));
+  if (window.__karma__ == null) {
+    window.tabahead(window.jQuery, window.fuzzy, window.chrome, window.setTimeout);
+  }
+
+}).call(this);

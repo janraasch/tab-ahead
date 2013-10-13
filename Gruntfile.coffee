@@ -24,16 +24,17 @@ module.exports = (grunt) ->
                 files: [
                     '*.coffee'
                     '<%= yeoman.test %>/*.coffee'
+                    '<%= yeoman.app %>/scripts/*.coffee'
                 ]
                 tasks: [
+                    'coffee'
                     'coffeelint'
                     'karma:watch:run'
                 ]
             jshint:
                 files: [
-                    '<%= yeoman.app %>/scripts/{,*/}*.js'
                     '<%= yeoman.app %>/*.json'
-                    '<%= yeoman.test %>/*/*{.js,.json}'
+                    '<%= yeoman.test %>/fixtures/*.json'
                     '*.js'
                 ]
                 tasks: [
@@ -61,6 +62,7 @@ module.exports = (grunt) ->
             all: [
                 '*.coffee',
                 '<%= yeoman.test %>/*.coffee'
+                '<%= yeoman.app %>/scripts/*.coffee'
             ]
 
         jshint:
@@ -68,21 +70,28 @@ module.exports = (grunt) ->
                 jshintrc: '.jshintrc'
             all: [
                 '*.js'
-                '<%= yeoman.app %>/scripts/*.js'
                 '<%= yeoman.app %>/*.json'
-                '<%= yeoman.test %>/*/*{.js,.json}'
+                '<%= yeoman.test %>/fixtures/*.json'
             ]
 
         csslint:
             options:
                 gradients: false
-            all: ['<%= yeoman.app %>/styles/{,*/}*.css']
+            all: ['<%= yeoman.app %>/styles/*.css']
+
+        coffee:
+            compile:
+                files:
+                    '<%= yeoman.app %>/scripts/popup.js': [
+                        '<%= yeoman.app %>/scripts/popup.coffee'
+                    ]
 
         karma:
             options:
                 configFile: 'karma.conf.js'
             e2e: {}
             watch:
+                browsers: ['Chrome', 'PhantomJS']
                 autoWatch: false
                 background: true
                 singleRun: false
@@ -141,6 +150,7 @@ module.exports = (grunt) ->
                 'karma:e2e'
             ]
             dist: [
+                'coffee'
                 'imagemin'
                 'htmlmin'
             ]

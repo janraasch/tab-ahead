@@ -1,5 +1,18 @@
 describe 'Tab Ahead. Popup', ->
 
+    # Mocking birds
+    window.chrome =
+        windows:
+            getCurrent: (options, callback) ->
+                $.getJSON 'base/test/fixtures/window.json', (data) ->
+                    callback data
+        tabs:
+            update: $.noop
+
+    beforeEach ->
+        setFixtures window.__html__['test/fixtures/form.html']
+        window.tabahead window.jQuery, window.fuzzy, window.chrome, window.setTimeout
+
     describe 'expects the chrome environment', ->
         it 'expects to find a form.navbar-search', ->
             (expect $ 'body').toContain 'form.navbar-search'
@@ -52,11 +65,9 @@ describe 'Tab Ahead. Popup', ->
 
                 jasmine.Clock.useMock()
 
-                $('input')
-                    .trigger('keyup')
-                    .trigger($.Event 'keyup', keyCode: 13)
+                $('input').trigger($.Event 'keyup', keyCode: 13)
 
-                jasmine.Clock.tick 200
+                jasmine.Clock.tick 100
 
             it 'should update the tab', ->
                 (expect updateSpy).toHaveBeenCalled()

@@ -27,11 +27,8 @@ module.exports = function (config) {
             {pattern: 'test/fixtures/*.html'},
             {pattern: 'test/fixtures/*.json', included: false},
 
-            // setting the **HTML** stage
-            'test/mocks/*.js',
-
             // SUT
-            'app/scripts/*.js',
+            'app/scripts/popup.coffee',
 
             // Test
             'test/*.coffee'
