@@ -88,3 +88,39 @@ describe 'Tab Ahead. Popup', ->
             it 'should update the tab', ->
                 (expect updateSpy).toHaveBeenCalled()
                 (expect updateSpy).toHaveBeenCalledWith item.original.id, active: true
+
+    describe 'If there is no match', ->
+        updateSpy = {}
+
+        beforeEach ->
+            updateSpy = spyOn window.chrome.tabs, 'update'
+
+            $('#typeahead')
+                .val('jan')
+                .trigger('keyup')
+
+            waitsFor ->
+                ($ 'ul').length > 0
+
+        describe 'hitting enter', ->
+            beforeEach ->
+                $('#typeahead')
+                    .val('janjanjanjanjanjanjanjan')
+                    .trigger('keyup')
+
+                waitsFor ->
+                    ($ 'ul').is(':hidden')
+                runs ->
+                    jasmine.Clock.useMock()
+                    ($ '#typeahead').trigger($.Event 'keyup', keyCode: 13)
+                    jasmine.Clock.tick 100
+
+            it 'should not update the tab', ->
+                (expect updateSpy).not.toHaveBeenCalled()
+
+            it 'should clear the input', ->
+                ($ '#typeahead').trigger('submit')
+                (expect ($ '#typeahead').val()).toBe ''
+
+
+

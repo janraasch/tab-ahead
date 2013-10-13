@@ -80,6 +80,8 @@ module.exports = (grunt) ->
             all: ['<%= yeoman.app %>/styles/*.css']
 
         coffee:
+            options:
+                sourceMap: true
             compile:
                 files:
                     '<%= yeoman.app %>/scripts/popup.js': [
