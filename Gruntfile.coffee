@@ -35,14 +35,13 @@ module.exports = (grunt) ->
                 files: [
                     '<%= yeoman.app %>/*.json'
                     '<%= yeoman.test %>/fixtures/*.json'
-                    '*.js'
                 ]
                 tasks: [
                     'jshint'
                     'karma:watch:run'
                 ]
             csslint:
-                files: ['<%= yeoman.app %>/styles/{,*/}*.css']
+                files: ['<%= yeoman.app %>/styles/*.css']
                 tasks: ['csslint']
 
         clean:
@@ -69,7 +68,6 @@ module.exports = (grunt) ->
             options:
                 jshintrc: '.jshintrc'
             all: [
-                '*.js'
                 '<%= yeoman.app %>/*.json'
                 '<%= yeoman.test %>/fixtures/*.json'
             ]
@@ -90,7 +88,7 @@ module.exports = (grunt) ->
 
         karma:
             options:
-                configFile: 'karma.conf.js'
+                configFile: 'karma.conf.coffee'
             e2e: {}
             watch:
                 browsers: ['Chrome', 'PhantomJS']
