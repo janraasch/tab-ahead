@@ -53,6 +53,7 @@ module.exports = (grunt) ->
                         '!<%= yeoman.dist %>/.git*'
                     ]
                 ]
+            compress: ['zip/TabAhead.zip']
 
         coffeelint:
             # `grunt-coffeelint` does not support this natively
@@ -150,7 +151,6 @@ module.exports = (grunt) ->
                 'karma:e2e'
             ]
             dist: [
-                'coffee'
                 'imagemin'
                 'htmlmin'
             ]
@@ -188,6 +188,7 @@ module.exports = (grunt) ->
 
     grunt.registerTask 'build', [
         'test'
+        'coffee'
         'clean:dist'
         'useminPrepare'
         'concurrent:dist'
@@ -196,6 +197,7 @@ module.exports = (grunt) ->
         'uglify'
         'copy'
         'usemin'
+        'clean:compress'
         'compress'
     ]
 
