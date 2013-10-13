@@ -33,6 +33,7 @@ module.exports = (grunt) ->
                 ]
             jshint:
                 files: [
+                    '*.json'
                     '<%= yeoman.app %>/*.json'
                     '<%= yeoman.test %>/fixtures/*.json'
                 ]
@@ -66,9 +67,8 @@ module.exports = (grunt) ->
             ]
 
         jshint:
-            options:
-                jshintrc: '.jshintrc'
             all: [
+                '*.json'
                 '<%= yeoman.app %>/*.json'
                 '<%= yeoman.test %>/fixtures/*.json'
             ]
