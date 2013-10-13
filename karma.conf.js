@@ -34,11 +34,11 @@ module.exports = function (config) {
             'app/scripts/*.js',
 
             // Test
-            'test/*.js'
+            'test/*.coffee'
         ],
 
         preprocessors: {
-            //'**/*.coffee': ['coffee'],
+            '**/*.coffee': ['coffee'],
             '**/*.html': ['html2js']
         },
 

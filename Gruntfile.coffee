@@ -21,13 +21,19 @@ module.exports = (grunt) ->
             options:
                 spawn: false
             coffeelint:
-                files: ['*.coffee']
-                tasks: ['coffeelint']
+                files: [
+                    '*.coffee'
+                    '<%= yeoman.test %>/*.coffee'
+                ]
+                tasks: [
+                    'coffeelint'
+                    'karma:watch:run'
+                ]
             jshint:
                 files: [
                     '<%= yeoman.app %>/scripts/{,*/}*.js'
                     '<%= yeoman.app %>/*.json'
-                    '<%= yeoman.test %>/{,*/}*{.js,.json}'
+                    '<%= yeoman.test %>/*/*{.js,.json}'
                     '*.js'
                 ]
                 tasks: [
@@ -52,7 +58,10 @@ module.exports = (grunt) ->
             # `grunt-coffeelint` does not support this natively
             # [yet](https://github.com/vojtajina/grunt-coffeelint/pull/23).
             options: grunt.file.readJSON('.coffeelintrc')
-            all: ['Gruntfile.coffee']
+            all: [
+                '*.coffee',
+                '<%= yeoman.test %>/*.coffee'
+            ]
 
         jshint:
             options:
@@ -61,7 +70,7 @@ module.exports = (grunt) ->
                 '*.js'
                 '<%= yeoman.app %>/scripts/*.js'
                 '<%= yeoman.app %>/*.json'
-                '<%= yeoman.test %>/{,*/}*{.js,.json}'
+                '<%= yeoman.test %>/*/*{.js,.json}'
             ]
 
         csslint:
