@@ -31,14 +31,16 @@ module.exports = (grunt) ->
                     'coffeelint'
                     'karma:watch:run'
                 ]
-            jshint:
+            jsonlint:
                 files: [
                     '*.json'
+                    '.bower_rc'
+                    '.coffeelintrc'
                     '<%= yeoman.app %>/*.json'
                     '<%= yeoman.test %>/fixtures/*.json'
                 ]
                 tasks: [
-                    'jshint'
+                    'jsonlint'
                     'karma:watch:run'
                 ]
             csslint:
@@ -66,9 +68,11 @@ module.exports = (grunt) ->
                 '<%= yeoman.app %>/scripts/*.coffee'
             ]
 
-        jshint:
+        jsonlint:
             all: [
                 '*.json'
+                '.bower_rc'
+                '.coffeelintrc'
                 '<%= yeoman.app %>/*.json'
                 '<%= yeoman.test %>/fixtures/*.json'
             ]
@@ -146,7 +150,7 @@ module.exports = (grunt) ->
         concurrent:
             test: [
                 'coffeelint'
-                'jshint'
+                'jsonlint'
                 'csslint'
                 'karma:e2e'
             ]
