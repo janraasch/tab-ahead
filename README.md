@@ -19,6 +19,7 @@ Keyboard Shortcut
 
 Version History
 ------------
+* v1.0.8 - New logo and popup icon. Fix #1.
 * v1.0.7 - Fix bug where popup was not closed after selection.
 * v1.0.6 - Improve build.
 * v1.0.5 - Fix issue with popup sometimes not closing as exspected.
@@ -36,6 +37,7 @@ Thank You
 * [Flatstrap](http://littlesparkvt.com/flatstrap/) for the lack of rounded corners and gradients.
 * [Font Awesome](http://fortawesome.github.io/Font-Awesome/) for the logo, i.e. `icon-folder-close (&#xf07b;)` + `icon-terminal (&#xf120;)`.
 * [Sublime Text](http://www.sublimetext.com/) for the inspiration (i.e. `command+T/P` on OSX, `ctrl+P` on Linux and Windows).
+* [Christian](https://twitter.com/ChristianKapke) for helping me out with the popup icon.
 
 Alternatives
 -------------
@@ -49,7 +51,7 @@ Development
 
 Contributing
 --------------
-Pull requests and issues are very welcome.
+Pull requests and constructive issues are very welcome.
 
 ### Available Grunt Commands
 * `grunt test` for linting and running tests.
