@@ -53,7 +53,8 @@ window.tabahead = ($, fuzzy, chrome, setTimeout) ->
         item = (@$menu.find '.active').data 'value'
 
         setTimeout ->
-            chrome.tabs.update item.original.id, active: true
+            chrome.tabs.update item.original.id, active: true, ->
+                window.close()
         , 1
 
         # `@hide()` suddenly caused the popup to stay open.

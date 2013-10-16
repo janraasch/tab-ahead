@@ -7,7 +7,8 @@ describe 'Tab Ahead. Popup', ->
                 $.getJSON 'base/test/fixtures/window.json', (data) ->
                     callback data
         tabs:
-            update: $.noop
+            update: (tabId, updateProperties, callback) ->
+                callback()
 
     beforeEach ->
         setFixtures window.__html__['test/fixtures/form.html']
@@ -53,12 +54,14 @@ describe 'Tab Ahead. Popup', ->
                 (expect ($ 'ul').html() + '\n').toBe window.__html__['test/fixtures/suggestions.html']
 
     describe 'Selecting a suggestion', ->
+        closeSpy = {}
         updateSpy = {}
         item = {}
         li = {}
 
         beforeEach ->
-            updateSpy = spyOn window.chrome.tabs, 'update'
+            updateSpy = (spyOn window.chrome.tabs, 'update').andCallThrough()
+            closeSpy = spyOn window, 'close'
 
             $('#typeahead')
                 .val('jan')
@@ -78,9 +81,13 @@ describe 'Tab Ahead. Popup', ->
 
                 jasmine.Clock.tick 100
 
-            it 'should update the tab', ->
+            it 'should update the tab and close the window', ->
                 (expect updateSpy).toHaveBeenCalled()
-                (expect updateSpy).toHaveBeenCalledWith item.original.id, active: true
+                (expect updateSpy.mostRecentCall.args[0]).toBe item.original.id
+                (expect updateSpy.mostRecentCall.args[1]).toEqual active:true
+                (expect updateSpy.mostRecentCall.args[2]).toEqual jasmine.any Function
+                (expect closeSpy).toHaveBeenCalled()
+
 
         describe 'by click', ->
             beforeEach ->
@@ -94,9 +101,12 @@ describe 'Tab Ahead. Popup', ->
 
                 jasmine.Clock.tick 200
 
-            it 'should update the tab', ->
+            it 'should update the tab and close the window', ->
                 (expect updateSpy).toHaveBeenCalled()
-                (expect updateSpy).toHaveBeenCalledWith item.original.id, active: true
+                (expect updateSpy.mostRecentCall.args[0]).toBe item.original.id
+                (expect updateSpy.mostRecentCall.args[1]).toEqual active:true
+                (expect updateSpy.mostRecentCall.args[2]).toEqual jasmine.any Function
+                (expect closeSpy).toHaveBeenCalled()
 
     describe 'If there is no match', ->
         updateSpy = {}
