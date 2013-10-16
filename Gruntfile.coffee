@@ -36,6 +36,7 @@ module.exports = (grunt) ->
                     '*.json'
                     '.bower_rc'
                     '.coffeelintrc'
+                    '.csslintrc'
                     '<%= yeoman.app %>/*.json'
                     '<%= yeoman.test %>/fixtures/*.json'
                 ]
@@ -79,7 +80,7 @@ module.exports = (grunt) ->
 
         csslint:
             options:
-                gradients: false
+                csslintrc: '.csslintrc'
             all: ['<%= yeoman.app %>/styles/*.css']
 
         coffee:
