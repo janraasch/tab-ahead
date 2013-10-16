@@ -1,4 +1,4 @@
-Tab Ahead [![Build Status](https://travis-ci.org/janraasch/tab-ahead.png?branch=master)](https://travis-ci.org/janraasch/tab-ahead)
+Tab Ahead [![Build Status](https://travis-ci.org/janraasch/tab-ahead.png?branch=master)](https://travis-ci.org/janraasch/tab-ahead) [![devDependency Status](https://david-dm.org/janraasch/tab-ahead/dev-status.png)](https://david-dm.org/janraasch/tab-ahead#info=devDependencies)
 =========
 
 Lightweight [Chrome Extension](https://chrome.google.com/webstore/detail/tab-ahead/naoajjeoiblmpegfelhkapanmmaaghmi) that helps you to quickly find open tabs by title and url.
