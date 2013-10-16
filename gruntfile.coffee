@@ -34,9 +34,7 @@ module.exports = (grunt) ->
             jsonlint:
                 files: [
                     '*.json'
-                    '.bower_rc'
-                    '.coffeelintrc'
-                    '.csslintrc'
+                    '.*rc'
                     '<%= yeoman.app %>/*.json'
                     '<%= yeoman.test %>/fixtures/*.json'
                 ]
