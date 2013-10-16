@@ -57,7 +57,7 @@ window.tabahead = ($, fuzzy, chrome, setTimeout) ->
         , 1
 
         # `@hide()` suddenly caused the popup to stay open.
-        return window.close()
+        return
 
     # Init `typeahead`.
     ($ '#typeahead')
@@ -75,5 +75,5 @@ window.tabahead = ($, fuzzy, chrome, setTimeout) ->
         ($ '#typeahead').val ''
         event.stopPropagation()
 
-# Go go go
+# Go go go, unless we're unit testing this thing.
 window.tabahead window.jQuery, window.fuzzy, window.chrome, window.setTimeout unless window.__karma__?
