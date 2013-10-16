@@ -57,21 +57,23 @@ window.tabahead = ($, fuzzy, chrome, setTimeout) ->
         , 1
 
         # `@hide()` suddenly caused the popup to stay open.
-        return
+        return window.close()
 
     # Init `typeahead`.
-    ($ '#typeahead').typeahead
-        source: source
-        matcher: matcher
-        sorter: sorter
-        highlighter: highlighter
-        items: 10
+    ($ '#typeahead')
+        .typeahead
+            source: source
+            matcher: matcher
+            sorter: sorter
+            highlighter: highlighter
+            items: 10
+        .focus()
 
     # Do not `submit` form,
     # but reset input to empty string.
-    ($ 'form').on 'submit', ->
+    ($ 'form').on 'submit', (event) ->
         ($ '#typeahead').val ''
-        false
+        event.stopPropagation()
 
 # Go go go
 window.tabahead window.jQuery, window.fuzzy, window.chrome, window.setTimeout unless window.__karma__?
