@@ -13,12 +13,21 @@ describe 'Tab Ahead. Popup', ->
         setFixtures window.__html__['test/fixtures/form.html']
         window.tabahead window.jQuery, window.fuzzy, window.chrome, window.setTimeout
 
+    describe 'loaded without exploding', ->
+        it 'is available', ->
+            (expect window.tabahead).toBeDefined()
+            (expect window.tabahead).toEqual jasmine.any Function
+
     describe 'expects the chrome environment', ->
         it 'expects to find a form.navbar-search', ->
             (expect $ 'body').toContain 'form.navbar-search'
 
         it 'expects to find an input#typeahead', ->
             (expect $ 'form.navbar-search').toContain 'input#typeahead'
+
+    describe 'Initially the input', ->
+        it 'should be focused', ->
+            (expect $ 'input#typeahead').toBeFocused()
 
     describe 'Typing some text into the input field', ->
         getCurrentWindowSpy = {}
