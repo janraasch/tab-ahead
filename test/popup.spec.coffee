@@ -1,18 +1,37 @@
 describe 'Tab Ahead. Popup', ->
+    # --> Constants shared with `options.coffee`
+    QUERY =
+        ALL: 'all'
+        CURRENT: 'current'
+
+    PREF_QUERY = 'pref/query'
+    # Constants shared with `options.coffee` <--
 
     # Mocking birds
     window.chrome =
         windows:
-            getCurrent: (options, callback) ->
-                $.getJSON 'base/test/fixtures/window.json', (data) ->
-                    callback data
+            update: (windowId, updateInfo, callback) ->
+                callback?()
+            WINDOW_ID_CURRENT: 271
         tabs:
+            query: (queryInfo, callback) ->
+                if queryInfo.currentWindow
+                    $.getJSON 'base/test/fixtures/currentwindow.json', (data) ->
+                        callback data
+                else
+                    $.getJSON 'base/test/fixtures/allwindows.json', (data) ->
+                        callback data
             update: (tabId, updateProperties, callback) ->
                 callback()
 
     beforeEach ->
         setFixtures window.__html__['test/fixtures/form.html']
-        window.tabahead window.jQuery, window.fuzzy, window.chrome, window.setTimeout
+        window.localStorage[PREF_QUERY] = undefined
+        window.tabahead window.jQuery,
+            window.fuzzy,
+            window.chrome,
+            window.setTimeout,
+            window.localStorage
 
     describe 'loaded without exploding', ->
         it 'is available', ->
@@ -31,17 +50,20 @@ describe 'Tab Ahead. Popup', ->
             (expect $ 'input#typeahead').toBeFocused()
 
     describe 'Typing some text into the input field', ->
-        getCurrentWindowSpy = {}
+        queryTabsSpy = {}
 
         beforeEach ->
-            getCurrentWindowSpy = (spyOn window.chrome.windows, 'getCurrent').andCallThrough()
+            queryTabsSpy = (spyOn window.chrome.tabs, 'query').andCallThrough()
 
             $('#typeahead')
                 .val('jan')
                 .trigger('keyup')
 
-        it 'should ask chrome API for current window', ->
-            (expect getCurrentWindowSpy).toHaveBeenCalled()
+        it 'should ask chrome API `tabs.query', ->
+            (expect queryTabsSpy).toHaveBeenCalled()
+
+        it 'should query the current window by default', ->
+            (expect queryTabsSpy.calls[0].args[0].currentWindow).toBe true
 
         it 'should show suggestions', ->
             waitsFor ->
@@ -53,6 +75,22 @@ describe 'Tab Ahead. Popup', ->
                 # Add `\n` due to `new line at the end of the fixture.
                 (expect ($ 'ul').html() + '\n').toBe window.__html__['test/fixtures/suggestions.html']
 
+    describe 'with the `pref/query` set to `all`', ->
+        queryTabsSpy = {}
+
+        beforeEach ->
+            window.localStorage[PREF_QUERY] = QUERY.ALL
+
+        beforeEach ->
+            queryTabsSpy = (spyOn window.chrome.tabs, 'query').andCallThrough()
+
+            $('#typeahead')
+                .val('jan')
+                .trigger('keyup')
+
+        it 'should query all windows', ->
+            (expect queryTabsSpy.calls[0].args[0]).toEqual({})
+
     describe 'Selecting a suggestion', ->
         closeSpy = {}
         updateSpy = {}
@@ -63,50 +101,88 @@ describe 'Tab Ahead. Popup', ->
             updateSpy = (spyOn window.chrome.tabs, 'update').andCallThrough()
             closeSpy = spyOn window, 'close'
 
-            $('#typeahead')
-                .val('jan')
-                .trigger('keyup')
-
-            waitsFor ->
-                ($ 'ul').length > 0
-
-        describe 'by hitting return', ->
+        describe 'inside the current window', ->
             beforeEach ->
-                li = $ 'li:nth-child(1)'
-                item = li.data 'value'
+                $('#typeahead')
+                    .val('jan')
+                    .trigger('keyup')
 
-                jasmine.Clock.useMock()
+                waitsFor ->
+                    ($ 'ul').length > 0
 
-                $('input').trigger($.Event 'keyup', keyCode: 13)
+            describe 'by hitting return', ->
+                beforeEach ->
+                    li = $ 'li:nth-child(1)'
+                    item = li.data 'value'
 
-                jasmine.Clock.tick 100
+                    jasmine.Clock.useMock()
 
-            it 'should update the tab and close the window', ->
-                (expect updateSpy).toHaveBeenCalled()
-                (expect updateSpy.mostRecentCall.args[0]).toBe item.original.id
-                (expect updateSpy.mostRecentCall.args[1]).toEqual active:true
-                (expect updateSpy.mostRecentCall.args[2]).toEqual jasmine.any Function
-                (expect closeSpy).toHaveBeenCalled()
+                    $('input').trigger($.Event 'keyup', keyCode: 13)
+
+                    jasmine.Clock.tick 100
+
+                it 'should update the tab and close the popup', ->
+                    (expect updateSpy).toHaveBeenCalled()
+                    (expect updateSpy.mostRecentCall.args[0]).toBe item.original.id
+                    (expect updateSpy.mostRecentCall.args[1]).toEqual active:true
+                    (expect updateSpy.mostRecentCall.args[2]).toEqual jasmine.any Function
+                    (expect closeSpy).toHaveBeenCalled()
 
 
-        describe 'by click', ->
+            describe 'by click', ->
+                beforeEach ->
+                    li = $ 'li:nth-child(2)'
+                    item = li.data 'value'
+
+                    jasmine.Clock.useMock()
+
+                    ($ li).trigger 'mouseenter'
+                    ($ li).trigger 'click'
+
+                    jasmine.Clock.tick 200
+
+                it 'should update the tab and close the popup', ->
+                    (expect updateSpy).toHaveBeenCalled()
+                    (expect updateSpy.mostRecentCall.args[0]).toBe item.original.id
+                    (expect updateSpy.mostRecentCall.args[1]).toEqual active:true
+                    (expect updateSpy.mostRecentCall.args[2]).toEqual jasmine.any Function
+                    (expect closeSpy).toHaveBeenCalled()
+
+        describe 'inside a different window', ->
+            updateWindowSpy = {}
             beforeEach ->
-                li = $ 'li:nth-child(2)'
-                item = li.data 'value'
+                updateWindowSpy = (spyOn window.chrome.windows, 'update').andCallThrough()
+                window.localStorage[PREF_QUERY] = QUERY.ALL
 
-                jasmine.Clock.useMock()
+            beforeEach ->
+                $('#typeahead')
+                    .val('jan')
+                    .trigger('keyup')
 
-                ($ li).trigger 'mouseenter'
-                ($ li).trigger 'click'
+                waitsFor ->
+                    ($ 'ul').length > 0
 
-                jasmine.Clock.tick 200
+            describe 'by click', ->
+                beforeEach ->
+                    li = $ 'li:nth-child(2)'
+                    item = li.data 'value'
 
-            it 'should update the tab and close the window', ->
-                (expect updateSpy).toHaveBeenCalled()
-                (expect updateSpy.mostRecentCall.args[0]).toBe item.original.id
-                (expect updateSpy.mostRecentCall.args[1]).toEqual active:true
-                (expect updateSpy.mostRecentCall.args[2]).toEqual jasmine.any Function
-                (expect closeSpy).toHaveBeenCalled()
+                    jasmine.Clock.useMock()
+
+                    ($ li).trigger 'mouseenter'
+                    ($ li).trigger 'click'
+
+                    jasmine.Clock.tick 200
+
+                it 'should update the tab and focus the other window, plus close the popup', ->
+                    (expect updateSpy).toHaveBeenCalled()
+                    (expect updateSpy.mostRecentCall.args[0]).toBe item.original.id
+                    (expect updateSpy.mostRecentCall.args[1]).toEqual active: true
+                    (expect updateSpy.mostRecentCall.args[2]).toEqual jasmine.any Function
+                    (expect updateWindowSpy).toHaveBeenCalled()
+                    (expect updateWindowSpy.mostRecentCall.args[0]).toBe item.original.windowId
+                    (expect updateWindowSpy.mostRecentCall.args[1]).toEqual focused: true
+                    (expect closeSpy).toHaveBeenCalled()
 
     describe 'If there is no match', ->
         updateSpy = {}

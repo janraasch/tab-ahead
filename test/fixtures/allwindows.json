@@ -1,12 +1,5 @@
-{
-    "alwaysOnTop": false,
-    "focused": false,
-    "height": 874,
-    "id": 271,
-    "incognito": false,
-    "left": 0,
-    "state": "maximized",
-    "tabs": [{
+[
+    {
         "active": false,
         "favIconUrl": "https://www.google.com/images/icons/product/chrome_web_store-32.png",
         "highlighted": false,
@@ -18,8 +11,9 @@
         "status": "complete",
         "title": "Chrome Web Store - Tab Ahead",
         "url": "https://chrome.google.com/webstore/detail/tab-ahead/naoajjeoiblmpegfelhkapanmmaaghmi",
-        "windowId": 271
-    }, {
+        "windowId": 275
+    },
+    {
         "active": false,
         "favIconUrl": "https://github.com/favicon.ico",
         "highlighted": false,
@@ -31,8 +25,9 @@
         "status": "complete",
         "title": "janraasch (Jan Raasch)",
         "url": "https://github.com/janraasch?tab=repositories",
-        "windowId": 271
-    }, {
+        "windowId": 276
+    },
+    {
         "active": false,
         "favIconUrl": "https://github.com/favicon.ico",
         "highlighted": false,
@@ -44,8 +39,9 @@
         "status": "complete",
         "title": "janraasch/tab-ahead",
         "url": "https://github.com/janraasch/tab-ahead",
-        "windowId": 271
-    }, {
+        "windowId": 277
+    },
+    {
         "active": false,
         "favIconUrl": "https://github.com/favicon.ico",
         "highlighted": false,
@@ -58,7 +54,8 @@
         "title": "janraasch/sublimetext-commitment",
         "url": "https://github.com/janraasch/sublimetext-commitment",
         "windowId": 271
-    }, {
+    },
+    {
         "active": false,
         "favIconUrl": "https://github.com/favicon.ico",
         "highlighted": false,
@@ -71,7 +68,8 @@
         "title": "janraasch/janraasch.github.io",
         "url": "https://github.com/janraasch/janraasch.github.io",
         "windowId": 271
-    }, {
+    },
+    {
         "active": false,
         "favIconUrl": "https://github.com/favicon.ico",
         "highlighted": false,
@@ -84,7 +82,8 @@
         "title": "janraasch/generator-reveal",
         "url": "https://github.com/janraasch/generator-reveal",
         "windowId": 271
-    }, {
+    },
+    {
         "active": false,
         "favIconUrl": "https://github.com/favicon.ico",
         "highlighted": false,
@@ -97,7 +96,8 @@
         "title": "janraasch/grunt-lesslint",
         "url": "https://github.com/janraasch/grunt-lesslint",
         "windowId": 271
-    }, {
+    },
+    {
         "active": false,
         "favIconUrl": "https://github.com/favicon.ico",
         "highlighted": false,
@@ -110,7 +110,8 @@
         "title": "janraasch/later-dude",
         "url": "https://github.com/janraasch/later-dude",
         "windowId": 271
-    }, {
+    },
+    {
         "active": true,
         "favIconUrl": "chrome://theme/IDR_EXTENSIONS_FAVICON@2x",
         "highlighted": true,
@@ -124,8 +125,5 @@
         "title": "Extensions",
         "url": "chrome://extensions/",
         "windowId": 271
-    }],
-    "top": 22,
-    "type": "normal",
-    "width": 1440
-}
+    }
+]

@@ -20,7 +20,7 @@ module.exports = (config) ->
             {pattern: 'test/fixtures/*.json', included: false}
 
             # SUT
-            'app/scripts/popup.coffee'
+            'app/scripts/*.coffee'
 
             # Test
             'test/*.spec.coffee'

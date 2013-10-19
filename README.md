@@ -17,9 +17,14 @@ Keyboard Shortcut
 * Press `Alt+T` to quickly open the search dialog.
 * Go to [chrome://extensions](chrome://extensions) and click `Keyboard shortcuts`/`Configure Commands` to change or remove the default shortcut.
 
+Options
+---------
+Choose whether to search in the context of the current window or over all (non-incognito) windows. Go to [chrome://extensions](chrome://extensions) and click the `Options` link next to the extension.
+
 
 Version History
 ------------
+* v1.1.0 - Add option to search through all open (non-incognito) windows.
 * v1.0.9 - Update icons to match the popup's color scheme.
 * v1.0.8 - New logo and popup icon. Fix #1.
 * v1.0.7 - Fix bug where popup was not closed after selection.

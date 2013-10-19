@@ -56,6 +56,8 @@ module.exports = (grunt) ->
                     ]
                 ]
             compress: ['zip/TabAhead.zip']
+            coffee:
+                src: ['<%= yeoman.app %>/scripts/*{.js,.js.map}']
 
         coffeelint:
             # `grunt-coffeelint` does not support this natively
@@ -85,10 +87,12 @@ module.exports = (grunt) ->
             options:
                 sourceMap: true
             compile:
-                files:
-                    '<%= yeoman.app %>/scripts/popup.js': [
-                        '<%= yeoman.app %>/scripts/popup.coffee'
-                    ]
+                expand: true
+                flatten: true
+                cwd: '<%= yeoman.app %>/scripts'
+                src: ['*.coffee']
+                dest: '<%= yeoman.app %>/scripts'
+                ext: '.js'
 
         karma:
             options:
@@ -103,7 +107,10 @@ module.exports = (grunt) ->
         useminPrepare:
             options:
                 dest: '<%= yeoman.dist %>'
-            html: ['<%= yeoman.app %>/popup.html']
+            html: [
+                '<%= yeoman.app %>/popup.html'
+                '<%= yeoman.app %>/options.html'
+            ]
 
         usemin:
             options:

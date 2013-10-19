@@ -1,4 +1,11 @@
-window.tabahead = ($, fuzzy, chrome, setTimeout) ->
+window.tabahead = ($, fuzzy, chrome, setTimeout, storage) ->
+    # --> Constants shared with `options.coffee`
+    QUERY =
+        ALL: 'all'
+        CURRENT: 'current'
+
+    PREF_QUERY = 'pref/query'
+    # Constants shared with `options.coffee` <--
 
     string_separator = ':::::'
 
@@ -11,11 +18,14 @@ window.tabahead = ($, fuzzy, chrome, setTimeout) ->
             "#{el.title}#{string_separator}#{el.url}"
 
     source = (query, process) ->
-        chrome.windows.getCurrent populate: true, (current_window) ->
-            results = fuzzy.filter query.replace(all_colons, ''), current_window.tabs, fuzzy_options
+        queryInfo = currentWindow: true
+        queryInfo = {} if storage[PREF_QUERY] is QUERY.ALL
+
+        chrome.tabs.query queryInfo, (tabs) ->
+            results = fuzzy.filter query.replace(all_colons, ''), tabs, fuzzy_options
             process results
 
-    matcher = ->
+     matcher = ->
         true
 
     sorter = (items) ->
@@ -54,6 +64,8 @@ window.tabahead = ($, fuzzy, chrome, setTimeout) ->
 
         setTimeout ->
             chrome.tabs.update item.original.id, active: true, ->
+                if item.original.windowId isnt chrome.windows.WINDOW_ID_CURRENT
+                    chrome.windows.update item.original.windowId, focused: true
                 window.close()
         , 1
 
@@ -75,6 +87,12 @@ window.tabahead = ($, fuzzy, chrome, setTimeout) ->
     ($ 'form').on 'submit', (event) ->
         ($ '#typeahead').val ''
         event.stopPropagation()
+        event.preventDefault()
 
 # Go go go, unless we're unit testing this thing.
-window.tabahead window.jQuery, window.fuzzy, window.chrome, window.setTimeout unless window.__karma__?
+unless window.__karma__?
+    window.tabahead window.jQuery,
+        window.fuzzy,
+        window.chrome,
+        window.setTimeout,
+        window.localStorage
