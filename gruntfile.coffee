@@ -170,7 +170,11 @@ module.exports = (grunt) ->
                 ]
 
         updateVersion:
-            manifest: ['<%= yeoman.app %>/manifest.json']
+            all: [
+                '<%= yeoman.app %>/manifest.json'
+                'package.json'
+                'bower.json'
+            ]
 
     grunt.registerMultiTask 'updateVersion',
         'Update the version key of .json files.', ->
@@ -183,7 +187,7 @@ module.exports = (grunt) ->
             @filesSrc.forEach (filepath) ->
                 manifest = grunt.file.readJSON filepath
                 manifest.version = versionnumber
-                grunt.file.write filepath, JSON.stringify manifest, null, 4
+                grunt.file.write filepath, JSON.stringify manifest, null, 2
 
     grunt.registerTask 'test', [
         'concurrent:test'
