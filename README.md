@@ -1,4 +1,4 @@
-![TabAhead](https://raw.github.com/janraasch/tab-ahead/master/app/images/icon-128.png) 
+![TabAhead](https://raw.github.com/janraasch/tab-ahead/master/app/images/icon-128.png)
 Tab Ahead [![Build Status](https://travis-ci.org/janraasch/tab-ahead.png?branch=master)](https://travis-ci.org/janraasch/tab-ahead) [![devDependency Status](https://david-dm.org/janraasch/tab-ahead/dev-status.png)](https://david-dm.org/janraasch/tab-ahead#info=devDependencies)
 =========
 
@@ -20,6 +20,7 @@ Keyboard Shortcut
 
 Version History
 ------------
+* v1.0.9 - Update icons to match the popup's color scheme.
 * v1.0.8 - New logo and popup icon. Fix #1.
 * v1.0.7 - Fix bug where popup was not closed after selection.
 * v1.0.6 - Improve build.
