@@ -31,7 +31,7 @@ module.exports = (config) ->
             '**/*.html': ['html2js']
 
         # possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-        reporters: ['dots']
+        reporters: ['dots', 'coverage']
 
         port: 9876
 

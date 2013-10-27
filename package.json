@@ -33,7 +33,8 @@
     "grunt-contrib-coffee": "~0.7.0",
     "grunt-jsonlint": "~1.0.1",
     "requirejs": "~2.1.9",
-    "grunt-cli": "~0.1.11"
+    "grunt-cli": "~0.1.11",
+    "karma-coverage": "~0.1.4"
   },
   "scripts": {
     "test": "node node_modules/grunt-cli/bin/grunt build"
