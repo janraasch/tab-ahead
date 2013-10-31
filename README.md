@@ -59,7 +59,7 @@ Development
 
 Contributing
 --------------
-Pull requests and constructive issues are very welcome.
+Pull requests and constructive issues are very welcome. In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt](http://gruntjs.com/).
 
 ### Available Grunt Commands
 * `grunt test` for linting and running tests.
