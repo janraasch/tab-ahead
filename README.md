@@ -24,7 +24,7 @@ Choose whether to search in the context of the current window or over all (non-i
 
 Version History
 ------------
-* v1.1.0 - Add option to search through all open (non-incognito) windows.
+* v1.1.0 - Add option to search through all open windows.
 * v1.0.9 - Update icons to match the popup's color scheme.
 * v1.0.8 - New logo and popup icon. Fix #1.
 * v1.0.7 - Fix bug where popup was not closed after selection.
