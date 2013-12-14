@@ -25,7 +25,7 @@ window.tabahead = ($, fuzzy, chrome, setTimeout, storage) ->
             results = fuzzy.filter query.replace(all_colons, ''), tabs, fuzzy_options
             process results
 
-     matcher = ->
+    matcher = ->
         true
 
     sorter = (items) ->
@@ -62,25 +62,24 @@ window.tabahead = ($, fuzzy, chrome, setTimeout, storage) ->
     $.fn.typeahead.Constructor::select = ->
         item = (@$menu.find '.active').data 'value'
 
-        setTimeout ->
+        setTimeout (->
             chrome.tabs.update item.original.id, active: true, ->
                 if item.original.windowId isnt chrome.windows.WINDOW_ID_CURRENT
                     chrome.windows.update item.original.windowId, focused: true
                 window.close()
-        , 1
+        ), 1
 
         # `@hide()` suddenly caused the popup to stay open.
         return
 
     # Init `typeahead`.
-    ($ '#typeahead')
-        .typeahead
-            source: source
-            matcher: matcher
-            sorter: sorter
-            highlighter: highlighter
-            items: 10
-        .focus()
+    ($ '#typeahead').typeahead(
+        source: source
+        matcher: matcher
+        sorter: sorter
+        highlighter: highlighter
+        items: 10
+    ).focus()
 
     # Do not `submit` form,
     # but reset input to empty string.
@@ -91,8 +90,4 @@ window.tabahead = ($, fuzzy, chrome, setTimeout, storage) ->
 
 # Go go go, unless we're unit testing this thing.
 unless window.__karma__?
-    window.tabahead window.jQuery,
-        window.fuzzy,
-        window.chrome,
-        window.setTimeout,
-        window.localStorage
+    window.tabahead window.jQuery, window.fuzzy, window.chrome, window.setTimeout, window.localStorage

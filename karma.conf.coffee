@@ -32,15 +32,22 @@ module.exports = (config) ->
             # https://github.com/karma-runner/karma-coverage/pull/19#issuecomment-29186243
             'app/scripts/*.coffee': ['coverage']
             'test/*.spec.coffee': ['coffee']
-            'fixtures/*.html': ['html2js']
+            'test/fixtures/*.html': ['html2js']
 
         # possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
         reporters: ['dots', 'coverage']
 
         # configure the reporter
         coverageReporter:
-            type: 'text-summary'
-            dir: 'coverage/'
+            reporters: [{
+                    type: 'text-summary'
+                    dir: 'coverage/'
+                },
+                {
+                    type: 'lcovonly'
+                    dir: 'coverage/'
+                }
+            ]
 
         port: 9876
 

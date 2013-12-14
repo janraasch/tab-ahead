@@ -55,6 +55,7 @@ module.exports = (grunt) ->
                         '!<%= yeoman.dist %>/.git*'
                     ]
                 ]
+            coverage: ['coverage']
             compress: ['zip/TabAhead.zip']
             coffee:
                 src: ['<%= yeoman.app %>/scripts/*{.js,.js.map}']
@@ -182,6 +183,10 @@ module.exports = (grunt) ->
                 'package.json'
                 'bower.json'
             ]
+
+        shell:
+            coveralls:
+                command: ['cat coverage/*/lcov.info | ./node_modules/coveralls/bin/coveralls.js']
 
     grunt.registerMultiTask 'updateVersion',
         'Update the version key of .json files.', ->

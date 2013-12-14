@@ -34,10 +34,13 @@
     "grunt-jsonlint": "~1.0.1",
     "requirejs": "~2.1.9",
     "grunt-cli": "~0.1.11",
-    "karma-coverage": "~0.1.4"
+    "karma-coverage": "~0.1.4",
+    "coveralls": "~2.6.0",
+    "grunt-shell": "~0.6.1"
   },
   "scripts": {
-    "test": "node node_modules/grunt-cli/bin/grunt build"
+    "test": "node ./node_modules/grunt-cli/bin/grunt build",
+    "coveralls": "node ./node_modules/grunt-cli/bin/grunt shell:coveralls"
   },
   "engines": {
     "node": ">=0.10.0"
