@@ -62,9 +62,8 @@ module.exports = (grunt) ->
                 src: ['<%= yeoman.app %>/scripts/*{.js,.js.map}']
 
         coffeelint:
-            # `grunt-coffeelint` does not support this natively
-            # [yet](https://github.com/vojtajina/grunt-coffeelint/pull/23).
-            options: grunt.file.readJSON('.coffeelintrc')
+            options:
+                configFile: '.coffeelintrc'
             all: [
                 '*.coffee',
                 '<%= yeoman.test %>/*.coffee'
