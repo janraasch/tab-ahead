@@ -4,5 +4,6 @@ temp
 .tmp
 dist
 zip
+coverage/
 app/scripts/*.js
 app/scripts/*.js.map

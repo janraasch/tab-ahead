@@ -27,11 +27,20 @@ module.exports = (config) ->
         ]
 
         preprocessors:
-            '**/*.coffee': ['coffee']
-            '**/*.html': ['html2js']
+            # **Caveat**. `.coffee` files processed by `coverage`
+            # should not be processed by `coffee`.
+            # https://github.com/karma-runner/karma-coverage/pull/19#issuecomment-29186243
+            'app/scripts/*.coffee': ['coverage']
+            'test/*.spec.coffee': ['coffee']
+            'fixtures/*.html': ['html2js']
 
         # possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
         reporters: ['dots', 'coverage']
+
+        # configure the reporter
+        coverageReporter:
+            type: 'text-summary'
+            dir: 'coverage/'
 
         port: 9876
 
