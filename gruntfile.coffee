@@ -5,6 +5,7 @@ module.exports = (grunt) ->
         app: 'app'
         dist: 'dist'
         test: 'test'
+        coverage: 'coverage'
 
     # Show elapsed time at the end.
     if grunt.option 'timing'
@@ -55,7 +56,7 @@ module.exports = (grunt) ->
                         '!<%= yeoman.dist %>/.git*'
                     ]
                 ]
-            coverage: ['coverage']
+            coverage: ['<%= yeoman.coverage %>']
             compress: ['zip/TabAhead.zip']
             coffee:
                 src: ['<%= yeoman.app %>/scripts/*{.js,.js.map}']
@@ -186,7 +187,7 @@ module.exports = (grunt) ->
 
         shell:
             coveralls:
-                command: ['cat coverage/*/lcov.info | ./node_modules/coveralls/bin/coveralls.js']
+                command: 'cat <%= yeoman.coverage %>/*/lcov.info | ./node_modules/coveralls/bin/coveralls.js'
 
     grunt.registerMultiTask 'updateVersion',
         'Update the version key of .json files.', ->
