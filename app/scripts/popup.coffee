@@ -15,7 +15,7 @@ window.tabahead = ($, fuzzy, chrome, setTimeout, storage) ->
         pre: '<strong class="text-info">'
         post: '</strong>'
         extract: (el) ->
-            "#{el.title}#{string_separator}#{el.url}"
+            "#{el.title}#{string_separator}#{el.url}".replace(/</g, '&lt;')
 
     source = (query, process) ->
         queryInfo = currentWindow: true
