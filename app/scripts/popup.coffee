@@ -8,6 +8,7 @@ window.tabahead = ($, fuzzy, chrome, setTimeout, storage) ->
     # Constants shared with `options.coffee` <--
 
     string_separator = ':::::'
+    string_separator_split_re = /(?:\<strong class="text-info"\>)?:{1,4}(?:\<\/strong\>)?:+/
 
     all_colons = /:/g
 
@@ -22,7 +23,7 @@ window.tabahead = ($, fuzzy, chrome, setTimeout, storage) ->
         queryInfo = {} if storage[PREF_QUERY] is QUERY.ALL
 
         chrome.tabs.query queryInfo, (tabs) ->
-            results = fuzzy.filter query.replace(all_colons, ''), tabs, fuzzy_options
+            results = fuzzy.filter query, tabs, fuzzy_options
             process results
 
     matcher = ->
@@ -32,7 +33,7 @@ window.tabahead = ($, fuzzy, chrome, setTimeout, storage) ->
         items
 
     highlighter = (item) ->
-        matches = item.string.split string_separator
+        matches = item.string.split string_separator_split_re
         [title_highlighted, url_highlighted] = matches
 
         "<div class=\"title\">#{title_highlighted}</div><small class=\"muted url\">#{url_highlighted}</small>"
