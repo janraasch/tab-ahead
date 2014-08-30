@@ -75,6 +75,23 @@ describe 'Tab Ahead. Popup', ->
                 # Add `\n` due to `new line at the end of the fixture.
                 (expect ($ 'ul').html() + '\n').toBe window.__html__['test/fixtures/suggestions.html']
 
+    describe 'Typing with colon-prefix into the input field', ->
+        queryTabsSpy = {}
+
+        it 'should search only in URL', ->
+            $('#typeahead')
+                .val(':google')
+                .trigger('keyup')
+
+            waitsFor ->
+                ($ 'ul').length > 0
+
+            runs ->
+                (expect $ 'ul').toHaveLength(1)
+
+                # Add `\n` due to `new line at the end of the fixture.
+                (expect ($ 'ul').html() + '\n').toBe window.__html__['test/fixtures/suggestions2.html']
+
     describe 'with the `pref/query` set to `all`', ->
         queryTabsSpy = {}
 
