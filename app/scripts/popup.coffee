@@ -10,8 +10,6 @@ window.tabahead = ($, fuzzy, chrome, setTimeout, storage) ->
     string_separator = ':::::'
     string_separator_split_re = /(?:\<strong class="text-info"\>)?:{1,4}(?:\<\/strong\>)?:+/
 
-    all_colons = /:/g
-
     fuzzy_options =
         pre: '<strong class="text-info">'
         post: '</strong>'
