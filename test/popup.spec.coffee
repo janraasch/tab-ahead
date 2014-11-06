@@ -124,7 +124,7 @@ describe 'Tab Ahead. Popup', ->
                 it 'should update the tab and close the popup', ->
                     (expect updateSpy).toHaveBeenCalled()
                     (expect updateSpy.mostRecentCall.args[0]).toBe item.original.id
-                    (expect updateSpy.mostRecentCall.args[1]).toEqual active:true
+                    (expect updateSpy.mostRecentCall.args[1]).toEqual active: true
                     (expect updateSpy.mostRecentCall.args[2]).toEqual jasmine.any Function
                     (expect closeSpy).toHaveBeenCalled()
 
@@ -144,7 +144,7 @@ describe 'Tab Ahead. Popup', ->
                 it 'should update the tab and close the popup', ->
                     (expect updateSpy).toHaveBeenCalled()
                     (expect updateSpy.mostRecentCall.args[0]).toBe item.original.id
-                    (expect updateSpy.mostRecentCall.args[1]).toEqual active:true
+                    (expect updateSpy.mostRecentCall.args[1]).toEqual active: true
                     (expect updateSpy.mostRecentCall.args[2]).toEqual jasmine.any Function
                     (expect closeSpy).toHaveBeenCalled()
 
@@ -216,6 +216,3 @@ describe 'Tab Ahead. Popup', ->
             it 'should clear the input', ->
                 ($ '#typeahead').trigger('submit')
                 (expect ($ '#typeahead').val()).toBe ''
-
-
-
