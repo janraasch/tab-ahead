@@ -44,6 +44,8 @@
     "coveralls": "node ./node_modules/grunt-cli/bin/grunt shell:coveralls"
   },
   "engines": {
+    "npm": ">=1.3.7",
     "node": ">=0.10.0"
-  }
+  },
+  "license": "MIT"
 }
