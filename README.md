@@ -46,7 +46,7 @@ Thank You
 * [Flatstrap](http://littlesparkvt.com/flatstrap/) for the lack of rounded corners and gradients.
 * [Font Awesome](http://fortawesome.github.io/Font-Awesome/) for the logo, i.e. `icon-folder-close (&#xf07b;)` + `icon-terminal (&#xf120;)`.
 * [Sublime Text](http://www.sublimetext.com/) for the inspiration i.e. `command+T/P` on OSX, `ctrl+P` on Linux and Windows.
-* [Christian](https://twitter.com/ChristianKapke) for helping me out with the popup icon.
+* [Christian](http://ckapke.de/) for helping me out with the popup icon.
 
 Alternatives
 -------------
