@@ -31,7 +31,7 @@ Version History
 * v1.0.8 - New logo and popup icon. Fix #1.
 * v1.0.7 - Fix bug where popup was not closed after selection.
 * v1.0.6 - Improve build.
-* v1.0.5 - Fix issue with popup sometimes not closing as exspected.
+* v1.0.5 - Fix issue with popup sometimes not closing as expected.
 * v1.0.4 - Fix UI glitch.
 * v1.0.3 - Improve UI.
 * v1.0.2 - Small improvements.
