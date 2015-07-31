@@ -26,6 +26,7 @@ Choose whether to search in the context of the current window or over all (non-i
 
 Version History
 ------------
+* v1.2.0 - Faster popup opening by reducing css asset size by two thirds.
 * v1.1.0 - Add option to search through all open windows.
 * v1.0.9 - Update icons to match the popup's color scheme.
 * v1.0.8 - New logo and popup icon. Fix #1.
@@ -76,4 +77,3 @@ This project and its contents are open source under the MIT license.
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/janraasch/tab-ahead/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
