@@ -2,7 +2,7 @@
   "name": "tab-ahead",
   "version": "1.2.0",
   "dependencies": {
-    "fuzzy-search": "*",
+    "fuzzy-search": "0.1.0",
     "flatstrap": "*",
     "jquery": "2.0.3"
   },
