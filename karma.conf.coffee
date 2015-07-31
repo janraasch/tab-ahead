@@ -3,18 +3,31 @@ fs = require 'fs'
 # Karma configuration
 module.exports = (config) ->
     # Use ENV vars on Travis and sauce.json locally to get credentials
+    useSauce = true
     unless process.env.SAUCE_USERNAME
-      unless fs.existsSync '.sauce.json'
-        console.log 'If you like to run tests on Sauce Labs locally'
-        console.log 'create a .sauce.json file with your credentials.'
-      else
-        process.env.SAUCE_USERNAME = require('./.sauce').username
-        process.env.SAUCE_ACCESS_KEY = require('./.sauce').accessKey
+        unless fs.existsSync '.sauce.json'
+            console.log 'If you like to run tests on Sauce Labs locally'
+            console.log 'create a .sauce.json file with your credentials.'
+        else
+            username = require('./.sauce').username
+            accessKey = require('./.sauce').accessKey
+            process.env.SAUCE_USERNAME = username if username?
+            process.env.SAUCE_ACCESS_KEY = accessKey if accessKey?
+
     tags = []
     tags.push "pr-#{process.env.TRAVIS_PULL_REQUEST}" if process.env.TRAVIS_PULL_REQUEST
     tags.push "branch-#{process.env.TRAVIS_BRANCH}" if process.env.TRAVIS_BRANCH
 
+    unless process.env.SAUCE_USERNAME? and process.env.SAUCE_ACCESS_KEY?
+        console.warn 'env.SAUCE_USERNAME and env.SAUCE_ACCESS_KEY are undefined'
+        console.warn 'Falling back to using local browsers instead of Sauce Labs'
+        useSauce = false
+
     customLaunchers = require './customLaunchers.json'
+    reporters = ['dots']
+    reporters.push 'saucelabs' if useSauce
+    reporters.push 'coverage'
+
     config.set
         basePath: ''
 
@@ -49,7 +62,7 @@ module.exports = (config) ->
             'test/fixtures/*.html': ['html2js']
 
         # possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-        reporters: ['dots', 'saucelabs', 'coverage']
+        reporters: reporters
 
         # configure the reporter
         coverageReporter:
@@ -83,10 +96,9 @@ module.exports = (config) ->
         singleRun: true
 
         # SauceLabs
-        browsers: Object.keys(customLaunchers)
-        customLaunchers: customLaunchers
-        sauceLabs:
-          testName: 'Tab Ahead'
+        browsers: if useSauce then Object.keys(customLaunchers) else ['PhantomJS']
+        customLaunchers: if useSauce then customLaunchers else {}
+        sauceLabs: testName: 'Tab Ahead'
         tags: tags
         # sometimes Windows seems to be quiet slow...
-        captureTimeout: 2*120000
+        captureTimeout: 2 * 120000
