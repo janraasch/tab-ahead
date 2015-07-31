@@ -1,4 +1,5 @@
-Copyright (c) 2010-2014 Wojciech Zawistowski, Travis Jeffery
+/*
+Copyright (c) 2008-2015 Pivotal Labs
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -18,3 +19,23 @@ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
 LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+module.exports = function(jasmineRequire) {
+  var jasmine = jasmineRequire.core(jasmineRequire);
+
+  var consoleFns = require('../console/console.js');
+  consoleFns.console(consoleFns, jasmine);
+
+  var env = jasmine.getEnv();
+
+  var jasmineInterface = jasmineRequire.interface(jasmine, env);
+
+  extend(global, jasmineInterface);
+
+  function extend(destination, source) {
+    for (var property in source) destination[property] = source[property];
+    return destination;
+  }
+
+  return jasmine;
+};

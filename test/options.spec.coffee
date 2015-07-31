@@ -21,8 +21,8 @@ describe 'Tab Ahead. Options', ->
 
     describe 'expects the chrome options html', ->
         it 'expects to find the two options', ->
-            (expect $ 'body').toContain '#current'
-            (expect $ 'body').toContain '#all'
+            (expect $ 'body').toContainElement '#current'
+            (expect $ 'body').toContainElement '#all'
 
     describe 'Initially the option', ->
         beforeEach ->

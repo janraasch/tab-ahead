@@ -7,7 +7,7 @@
     "jquery": "2.1.4"
   },
   "devDependencies": {
-    "jasmine-jquery": "1.7.0"
+    "jasmine-jquery": "2.1.0"
   },
   "private": true
 }
