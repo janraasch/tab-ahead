@@ -39,6 +39,10 @@ module.exports = (config) ->
 
         # configure the reporter
         coverageReporter:
+            instrumenters:
+                ibrik: require('ibrik')
+            instrumenter:
+                '**/*.coffee': 'ibrik'
             reporters: [{
                     type: 'text-summary'
                     dir: 'coverage/'
