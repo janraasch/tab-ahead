@@ -75,14 +75,14 @@ jasmine-jquery provides following custom matchers (in alphabetical order):
   - accepts a String or regular expression
   - e.g. `expect($('<div>some text</div>')).toHaveText('some text')`
 - `toHaveValue(value)`
-  - only for tags that have value attribute
+  - only for elements on which `val` can be called (`input`, `textarea`, etc)
   - e.g. `expect($('<input type="text" value="some text"/>')).toHaveValue('some text')`
 - `toHaveLength(value)`
   - e.g. `expect($('ul > li')).toHaveLength(3)`
 - `toBeDisabled()`
-  - e.g. `expect('<input type='submit' disabled='disabled'/>').toBeDisabled()`
+  - e.g. `expect('<input type="submit" disabled="disabled"/>').toBeDisabled()`
 - `toBeFocused()`
-  - e.g. `expect($('<input type='text' />').focus()).toBeFocused()`
+  - e.g. `expect($('<input type="text" />').focus()).toBeFocused()`
 - `toHandle(eventName)`
   - e.g. `expect($form).toHandle("submit")`
 - `toHandleWith(eventName, eventHandler)`
@@ -142,7 +142,7 @@ All of above methods have matching global short cuts:
 - `appendSetFixtures(html)`
 
 ``` javascript
-var fixture = setFixture('<div class="post">foo</div>')
+var fixture = setFixtures('<div class="post">foo</div>')
 var post = fixture.find('.post')
 ```
 
