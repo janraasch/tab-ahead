@@ -58,6 +58,7 @@ module.exports = (grunt) ->
                     ]
                 ]
             coverage: ['<%= yeoman.coverage %>']
+            tmp: ['<%= yeoman.tmp %>']
             compress: ['zip/TabAhead.zip']
             coffee:
                 src: ['<%= yeoman.app %>/scripts/*{.js,.js.map}']
@@ -117,6 +118,7 @@ module.exports = (grunt) ->
         usemin:
             options:
                 dirs: ['<%= yeoman.dist %>']
+                staging: '<%= yeoman.tmp %>'
             html: ['<%= yeoman.dist %>/{,*/}*.html']
             css: ['<%= yeoman.dist %>/styles/{,*/}*.css']
 
