@@ -125,5 +125,37 @@
         "title": "Extensions",
         "url": "chrome://extensions/",
         "windowId": 271
+    },
+    {
+        "active": false,
+        "favIconUrl": "https://www.google.com/favicon.ico",
+        "height": 982,
+        "highlighted": false,
+        "id": 3287,
+        "incognito": false,
+        "index": 0,
+        "pinned": false,
+        "selected": false,
+        "status": "complete",
+        "title": "Google",
+        "url": "https://www.google.com/",
+        "width": 1920,
+        "windowId": 3286
+    },
+    {
+        "active": true,
+        "favIconUrl": "http://lmgtfy.com/favicon.ico",
+        "height": 982,
+        "highlighted": true,
+        "id": 3298,
+        "incognito": false,
+        "index": 1,
+        "pinned": false,
+        "selected": true,
+        "status": "complete",
+        "title": "Let me google that for you",
+        "url": "http://lmgtfy.com/",
+        "width": 1920,
+        "windowId": 3286
     }
 ]
