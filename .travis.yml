@@ -1,5 +1,9 @@
 sudo: false
 language: node_js
 node_js:
-  - '0.10'
+- '0.12'
 after_success: npm run-script coveralls
+env:
+  global:
+  - secure: Oxy51PqGHLU2qqhC0ZyblYrHdkzOLGn6R4kd+/0eOKI1zsP2/nM7iktl8mSCJTPPJl0GpygupGQM77lHZQk55oTcMyKKSlQyJnZBtzXyNqMUWu6gk2smmOdwWljHVxTfe0kAq6bRPxLmX5abnlPSp4VhXM6JaN5R2JyLOJAmqP0=
+  - secure: YTYv4pzv3LIxnHgVXgd7WlZX0RfhXnPTsEJ6y9zjNy3nVCGYffb8Z6gi+z3gxITjgSigKT93PW9xgM+pSCPbmUGejZW9vFfOSl8iwBGesAhBInIXQnvuPqupAvhDuhyK8JdC0fZRQmoB3vv5T0HseGIcdiwkeTYwIq6VHhzdlMU=

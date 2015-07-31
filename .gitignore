@@ -2,6 +2,7 @@
 node_modules
 temp
 .tmp
+/.sauce.json
 /dist
 zip
 coverage/
