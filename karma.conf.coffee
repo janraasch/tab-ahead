@@ -9,7 +9,7 @@ module.exports = (config) ->
         files: [
             # External dependencies.
             'app/bower_components/fuzzy-search/lib/fuzzy.js'
-            'app/bower_components/jquery/jquery.js'
+            'app/bower_components/jquery/dist/jquery.js'
             'app/bower_components/flatstrap/assets/js/bootstrap-typeahead.js'
 
             # Dev dependencies.

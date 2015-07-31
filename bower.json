@@ -4,7 +4,7 @@
   "dependencies": {
     "fuzzy-search": "0.1.0",
     "flatstrap": "*",
-    "jquery": "2.0.3"
+    "jquery": "2.1.4"
   },
   "devDependencies": {
     "jasmine-jquery": "1.5.91"
