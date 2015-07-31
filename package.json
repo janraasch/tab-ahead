@@ -24,7 +24,7 @@
     "grunt-jsonlint": "~1.0.1",
     "grunt-karma": "~0.6.2",
     "grunt-purifycss": "^0.1.0",
-    "grunt-shell": "~0.6.1",
+    "grunt-shell": "^1.1.2",
     "grunt-usemin": "^3.0.0",
     "karma": "~0.10.2",
     "karma-chrome-launcher": "~0.1.0",
