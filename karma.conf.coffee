@@ -1,6 +1,20 @@
+fs = require 'fs'
+
 # Karma configuration
 module.exports = (config) ->
+    # Use ENV vars on Travis and sauce.json locally to get credentials
+    unless process.env.SAUCE_USERNAME
+      unless fs.existsSync '.sauce.json'
+        console.log 'If you like to run tests on Sauce Labs locally'
+        console.log 'create a .sauce.json file with your credentials.'
+      else
+        process.env.SAUCE_USERNAME = require('./.sauce').username
+        process.env.SAUCE_ACCESS_KEY = require('./.sauce').accessKey
+    tags = []
+    tags.push "pr-#{process.env.TRAVIS_PULL_REQUEST}" if process.env.TRAVIS_PULL_REQUEST
+    tags.push "branch-#{process.env.TRAVIS_BRANCH}" if process.env.TRAVIS_BRANCH
 
+    customLaunchers = require './customLaunchers.json'
     config.set
         basePath: ''
 
@@ -35,7 +49,7 @@ module.exports = (config) ->
             'test/fixtures/*.html': ['html2js']
 
         # possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-        reporters: ['dots', 'coverage']
+        reporters: ['dots', 'saucelabs', 'coverage']
 
         # configure the reporter
         coverageReporter:
@@ -64,20 +78,15 @@ module.exports = (config) ->
         # enable / disable watching file and executing tests whenever any file changes
         autoWatch: false
 
-
-        # Start these browsers, currently available:
-        # - Chrome
-        # - ChromeCanary
-        # - Firefox
-        # - Opera
-        # - Safari (only Mac)
-        # - PhantomJS
-        # - IE (only Windows)
-        browsers: ['PhantomJS']
-
-        # If browser does not capture in given timeout [ms], kill it
-        captureTimeout: 60000
-
         # Continuous Integration mode
         # if true, it capture browsers, run tests and exit
         singleRun: true
+
+        # SauceLabs
+        browsers: Object.keys(customLaunchers)
+        customLaunchers: customLaunchers
+        sauceLabs:
+          testName: 'Tab Ahead'
+        tags: tags
+        # sometimes Windows seems to be quiet slow...
+        captureTimeout: 2*120000
