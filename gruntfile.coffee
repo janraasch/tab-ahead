@@ -6,6 +6,7 @@ module.exports = (grunt) ->
         dist: 'dist'
         test: 'test'
         coverage: 'coverage'
+        tmp: '.tmp'
 
     # Show elapsed time at the end.
     if grunt.option 'timing'
@@ -154,6 +155,22 @@ module.exports = (grunt) ->
                         '<%= yeoman.app %>/manifest.json'
                     ]
 
+        purifycss:
+            popup:
+                src: [
+                    '<%= yeoman.app %>/popup.html'
+                    '<%= yeoman.tmp %>/concat/scripts/popup.js'
+                ],
+                css: ['<%= yeoman.tmp %>/concat/styles/main.css']
+                dest: '<%= yeoman.tmp %>/concat/styles/main.css'
+            options_page:
+                src: [
+                    '<%= yeoman.app %>/options.html'
+                    '<%= yeoman.tmp %>/concat/scripts/options.js'
+                ],
+                css: ['<%= yeoman.tmp %>/concat/styles/options.css']
+                dest: '<%= yeoman.tmp %>/concat/styles/options.css'
+
         concurrent:
             test: [
                 'coffeelint'
@@ -212,6 +229,7 @@ module.exports = (grunt) ->
         'useminPrepare'
         'concurrent:dist'
         'concat'
+        'purifycss'
         'cssmin'
         'uglify'
         'copy'
