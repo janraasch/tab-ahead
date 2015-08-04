@@ -1,6 +1,5 @@
 {
   "name": "tab-ahead",
-  "version": "1.2.0",
   "dependencies": {
     "fuzzy-search": "0.1.0",
     "flatstrap": "*",
@@ -9,5 +8,6 @@
   "devDependencies": {
     "jasmine-jquery": "2.1.0"
   },
-  "private": true
+  "private": true,
+  "version": "1.2.1"
 }

@@ -2,7 +2,6 @@
   "manifest_version": 2,
   "name": "Tab Ahead",
   "short_name": "Tab Ahead",
-  "version": "1.2.0",
   "description": "Tab Ahead lets you type ahead to quickly find open tabs by title and URL.",
   "icons": {
     "16": "images/icon-16.png",
@@ -34,5 +33,6 @@
         "linux": "Alt+T"
       }
     }
-  }
+  },
+  "version": "1.2.1"
 }
