@@ -17,6 +17,9 @@
     "default_title": "Tab Ahead",
     "default_popup": "popup.html"
   },
+  "background": {
+    "page": "bg.html"
+  },
   "options_page": "options.html",
   "permissions": [
     "tabs"
