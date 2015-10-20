@@ -1,7 +1,7 @@
 /*!
 Jasmine-jQuery: a set of jQuery helpers for Jasmine tests.
 
-Version 2.0.7
+Version 2.1.1
 
 https://github.com/velesin/jasmine-jquery
 
@@ -27,7 +27,13 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-+function (window, jasmine, $) { "use strict";
+(function (root, factory) {
+     if (typeof module !== 'undefined' && module.exports) {
+        factory(root, root.jasmine, require('jquery'));
+    } else {
+        factory(root, root.jasmine, root.jQuery);
+    }
+}((function() {return this; })(), function (window, jasmine, $) { "use strict";
 
   jasmine.spiedEventsKey = function (selector, eventName) {
     return [$(selector).selector, eventName].toString()
@@ -829,4 +835,4 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   window.getJSONFixture = function (url) {
     return jasmine.getJSONFixtures().proxyCallTo_('read', arguments)[url]
   }
-}(window, window.jasmine, window.jQuery);
+}));

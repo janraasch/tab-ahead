@@ -1,6 +1,5 @@
 {
   "name": "jasmine-jquery",
-  "version": "2.1.0",
   "main": "lib/jasmine-jquery.js",
   "ignore": [
     "test",
@@ -14,13 +13,14 @@
     "jquery": ">=2"
   },
   "homepage": "https://github.com/velesin/jasmine-jquery",
-  "_release": "2.1.0",
+  "version": "2.1.1",
+  "_release": "2.1.1",
   "_resolution": {
     "type": "version",
-    "tag": "2.1.0",
-    "commit": "a951eb21faab6816bb8f205dc266ae6781aa9b72"
+    "tag": "2.1.1",
+    "commit": "fdd234f58d4997ec13400ba4f070e8a803f6ecbe"
   },
   "_source": "git://github.com/velesin/jasmine-jquery.git",
-  "_target": "2.1.0",
+  "_target": "2.1.1",
   "_originalSource": "jasmine-jquery"
 }

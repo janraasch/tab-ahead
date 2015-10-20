@@ -1,10 +1,14 @@
 {
   "name": "jasmine-jquery",
   "description": "jQuery matchers and fixture loader for Jasmine framework",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "keywords": [
     "jasmine",
     "jquery"
+  ],
+  "main": "lib/jasmine-jquery.js",
+  "files": [
+    "lib/"
   ],
   "homepage": "http://github.com/velesin/jasmine-jquery",
   "author": {
