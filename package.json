@@ -26,7 +26,7 @@
     "grunt-shell": "^1.1.2",
     "grunt-usemin": "^3.0.0",
     "ibrik": "^2.0.0",
-    "karma": "^0.13.3",
+    "karma": "^0.13.12",
     "karma-chrome-launcher": "^0.2.0",
     "karma-coffee-preprocessor": "^0.3.0",
     "karma-coverage": "^0.5.1",
