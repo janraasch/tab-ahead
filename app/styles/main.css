@@ -1,9 +1,12 @@
 body {
     background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgb(238, 238, 238)), color-stop(1, rgb(248, 248, 248)));
+    margin-left: 4px;
+    margin-right: 4px;
 }
 
 .navbar-search {
     width: 500px;
+    height: 35px;
 }
 
 .title {
@@ -21,6 +24,7 @@ body {
 
 .dropdown-menu {
     background-color: rgb(233, 233, 233);
+    margin-bottom: 4px;
 }
 
 .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus, .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus, .dropdown-submenu:hover>a, .dropdown-submenu:focus>a {
