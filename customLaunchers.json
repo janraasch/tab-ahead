@@ -1,56 +1,62 @@
 {
-    "linux_crome": {
+    "linux_chrome": {
         "base": "SauceLabs",
         "browserName": "chrome",
         "platform": "Linux",
-        "version": "43"
+        "version": "46"
     },
     "win10_chrome": {
         "base": "SauceLabs",
         "browserName": "chrome",
         "platform": "Windows 10",
-        "version": "43"
+        "version": "46"
     },
     "win8_1_chrome": {
         "base": "SauceLabs",
         "browserName": "chrome",
         "platform": "Windows 8.1",
-        "version": "43"
+        "version": "46"
     },
     "win8_chrome": {
         "base": "SauceLabs",
         "browserName": "chrome",
         "platform": "Windows 8",
-        "version": "43"
+        "version": "46"
     },
     "win7_chrome": {
         "base": "SauceLabs",
         "browserName": "chrome",
         "platform": "Windows 7",
-        "version": "43"
+        "version": "46"
     },
     "winxp_chrome": {
         "base": "SauceLabs",
         "browserName": "chrome",
         "platform": "Windows XP",
-        "version": "43"
+        "version": "46"
     },
     "osx10_11_chrome": {
         "base": "SauceLabs",
         "browserName": "chrome",
         "platform": "OS X 10.11",
-        "version": "43"
+        "version": "46"
+    },
+    "osx10_10_chrome": {
+        "base": "SauceLabs",
+        "browserName": "chrome",
+        "platform": "OS X 10.10",
+        "version": "46"
     },
     "osx10_9_chrome": {
         "base": "SauceLabs",
         "browserName": "chrome",
         "platform": "OS X 10.9",
-        "version": "43"
+        "version": "46"
     },
     "osx10_8_chrome": {
         "base": "SauceLabs",
         "browserName": "chrome",
         "platform": "OS X 10.8",
-        "version": "43"
+        "version": "46"
     }
   }
