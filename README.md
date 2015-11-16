@@ -26,6 +26,7 @@ Choose whether to search in the context of the current window or over all (non-i
 
 Version History
 ------------
+* v1.2.2 - Equal margins for search input field.
 * v1.2.1 - Even faster popup response time.
 * v1.2.0 - Faster popup opening by reducing css asset size by two thirds.
 * v1.1.0 - Add option to search through all open windows.
