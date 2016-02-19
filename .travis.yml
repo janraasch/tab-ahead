@@ -1,5 +1,8 @@
 sudo: false
 language: node_js
+branches:
+  only:
+  - master
 node_js:
 - '5'
 after_success: npm run-script coveralls
