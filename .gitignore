@@ -2,6 +2,7 @@
 node_modules
 temp
 .tmp
+npm-debug.log
 /.sauce.json
 /dist
 zip
