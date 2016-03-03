@@ -28,7 +28,7 @@ describe 'Tab Ahead. Popup', ->
         setFixtures window.__html__['test/fixtures/form.html']
         window.localStorage[PREF_QUERY] = undefined
         window.tabahead window.jQuery,
-            window.fuzzy,
+            window.Fuse,
             window.chrome,
             window.setTimeout,
             window.localStorage
@@ -95,7 +95,7 @@ describe 'Tab Ahead. Popup', ->
     describe 'Selecting a suggestion', ->
         closeSpy = {}
         updateSpy = {}
-        item = {}
+        result = {}
         li = {}
 
         beforeEach ->
@@ -118,7 +118,7 @@ describe 'Tab Ahead. Popup', ->
             describe 'by hitting return', ->
                 beforeEach ->
                     li = $ 'li:nth-child(1)'
-                    item = li.data 'value'
+                    result = li.data 'value'
 
                     $('input').trigger($.Event 'keyup', keyCode: 13)
 
@@ -127,7 +127,7 @@ describe 'Tab Ahead. Popup', ->
                         if updateSpy.calls.count()
                             clearInterval interval
                             (expect updateSpy).toHaveBeenCalled()
-                            (expect updateSpy.calls.mostRecent().args[0]).toBe item.original.id
+                            (expect updateSpy.calls.mostRecent().args[0]).toBe result.item.id
                             (expect updateSpy.calls.mostRecent().args[1]).toEqual active: true
                             (expect updateSpy.calls.mostRecent().args[2]).toEqual jasmine.any Function
                             (expect closeSpy).toHaveBeenCalled()
@@ -137,7 +137,7 @@ describe 'Tab Ahead. Popup', ->
             describe 'by click', ->
                 beforeEach ->
                     li = $ 'li:nth-child(2)'
-                    item = li.data 'value'
+                    result = li.data 'value'
 
                     ($ li).trigger 'mouseenter'
                     ($ li).trigger 'click'
@@ -147,7 +147,7 @@ describe 'Tab Ahead. Popup', ->
                         if updateSpy.calls.count()
                             clearInterval interval
                             (expect updateSpy).toHaveBeenCalled()
-                            (expect updateSpy.calls.mostRecent().args[0]).toBe item.original.id
+                            (expect updateSpy.calls.mostRecent().args[0]).toBe result.item.id
                             (expect updateSpy.calls.mostRecent().args[1]).toEqual active: true
                             (expect updateSpy.calls.mostRecent().args[2]).toEqual jasmine.any Function
                             (expect closeSpy).toHaveBeenCalled()
@@ -174,7 +174,7 @@ describe 'Tab Ahead. Popup', ->
             describe 'by click', ->
                 beforeEach ->
                     li = $ 'li:nth-child(2)'
-                    item = li.data 'value'
+                    result = li.data 'value'
 
                     ($ li).trigger 'mouseenter'
                     ($ li).trigger 'click'
@@ -184,11 +184,11 @@ describe 'Tab Ahead. Popup', ->
                         if updateSpy.calls.count()
                             clearInterval interval
                             (expect updateSpy).toHaveBeenCalled()
-                            (expect updateSpy.calls.mostRecent().args[0]).toBe item.original.id
+                            (expect updateSpy.calls.mostRecent().args[0]).toBe result.item.id
                             (expect updateSpy.calls.mostRecent().args[1]).toEqual active: true
                             (expect updateSpy.calls.mostRecent().args[2]).toEqual jasmine.any Function
                             (expect updateWindowSpy).toHaveBeenCalled()
-                            (expect updateWindowSpy.calls.mostRecent().args[0]).toBe item.original.windowId
+                            (expect updateWindowSpy.calls.mostRecent().args[0]).toBe result.item.windowId
                             (expect updateWindowSpy.calls.mostRecent().args[1]).toEqual focused: true
                             (expect closeSpy).toHaveBeenCalled()
                             done()

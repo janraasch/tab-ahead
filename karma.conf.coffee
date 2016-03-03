@@ -34,8 +34,10 @@ module.exports = (config) ->
         frameworks: ['jasmine']
 
         files: [
+            'app/bower_components/array.from/array-from.js'
+
             # External dependencies.
-            'app/bower_components/fuzzy-search/lib/fuzzy.js'
+            'app/bower_components/fuse.js/src/fuse.js'
             'app/bower_components/jquery/dist/jquery.js'
             'app/bower_components/flatstrap/assets/js/bootstrap-typeahead.js'
 

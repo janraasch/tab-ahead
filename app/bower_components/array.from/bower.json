@@ -1,0 +1,21 @@
+{
+  "name": "array.from",
+  "version": "0.2.1",
+  "authors": [
+    "Mathias Bynens"
+  ],
+  "description": "A robust & optimized ES3-compatible polyfill for the Array.from method in ECMAScript 6.",
+  "main": "array-from.js",
+  "keywords": [
+    "polyfill"
+  ],
+  "license": "MIT",
+  "homepage": "https://mths.be/array-from",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

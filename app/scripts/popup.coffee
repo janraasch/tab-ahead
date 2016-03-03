@@ -1,4 +1,4 @@
-window.tabahead = ($, fuzzy, chrome, setTimeout, storage) ->
+window.tabahead = ($, Fuse, chrome, setTimeout, storage) ->
     # --> Constants shared with `options.coffee`
     QUERY =
         ALL: 'all'
@@ -11,18 +11,30 @@ window.tabahead = ($, fuzzy, chrome, setTimeout, storage) ->
 
     all_colons = /:/g
 
-    fuzzy_options =
-        pre: '<strong class="text-info">'
-        post: '</strong>'
-        extract: (el) ->
-            "#{el.title}#{string_separator}#{el.url}"
+    highlight_matches = (matches, text) ->
+        pair = matches.shift()
+        result = []
+        Array.from(text).forEach (_val, i) ->
+            char = text.charAt(i)
+            result.push('<strong class="text-info">') if (pair and i is pair[0])
+            result.push(char)
+            if (pair and i is pair[1])
+                result.push('</strong>')
+                pair = matches.shift()
+        result.join ''
+
+    filter = (query, tabs) ->
+        new Fuse(tabs,
+            keys: ['title', 'url'],
+            include: ['score', 'matches']
+        ).search(query)
 
     source = (query, process) ->
         queryInfo = currentWindow: true
         queryInfo = {} if storage[PREF_QUERY] is QUERY.ALL
 
         chrome.tabs.query queryInfo, (tabs) ->
-            results = fuzzy.filter query.replace(all_colons, ''), tabs, fuzzy_options
+            results = filter query, tabs
             process results
 
     matcher = ->
@@ -31,11 +43,17 @@ window.tabahead = ($, fuzzy, chrome, setTimeout, storage) ->
     sorter = (items) ->
         items
 
-    highlighter = (item) ->
-        matches = item.string.split string_separator
-        [title_highlighted, url_highlighted] = matches
+    highlighter = (result) ->
+        item = result.item
+        highlighted = {
+            title: item.title,
+            url: item.url
+        }
+        result.matches.forEach((match) ->
+            highlighted[match.key] = highlight_matches(match.indices, item[match.key])
+        )
 
-        "<div class=\"title\">#{title_highlighted}</div><small class=\"muted url\">#{url_highlighted}</small>"
+        "<div class=\"title\">#{highlighted.title}</div><small class=\"muted url\">#{highlighted.url}</small>"
 
     # Quick and dirty monkey patch
     # Implemented `$.fn.data` instead of
@@ -60,12 +78,11 @@ window.tabahead = ($, fuzzy, chrome, setTimeout, storage) ->
     # but was still visible as a separate window,
     # when showing all Chrome windows.
     $.fn.typeahead.Constructor::select = ->
-        item = (@$menu.find '.active').data 'value'
-
+        result = (@$menu.find '.active').data 'value'
         setTimeout (->
-            chrome.tabs.update item.original.id, active: true, ->
-                if item.original.windowId isnt chrome.windows.WINDOW_ID_CURRENT
-                    chrome.windows.update item.original.windowId, focused: true
+            chrome.tabs.update result.item.id, active: true, ->
+                if result.item.windowId isnt chrome.windows.WINDOW_ID_CURRENT
+                    chrome.windows.update result.item.windowId, focused: true
                 window.close()
         ), 1
 
@@ -90,4 +107,4 @@ window.tabahead = ($, fuzzy, chrome, setTimeout, storage) ->
 
 # Go go go, unless we're unit testing this thing.
 unless window.__karma__?
-    window.tabahead window.jQuery, window.fuzzy, window.chrome, window.setTimeout, window.localStorage
+    window.tabahead window.jQuery, window.Fuse, window.chrome, window.setTimeout, window.localStorage
