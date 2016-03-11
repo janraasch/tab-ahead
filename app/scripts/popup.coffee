@@ -11,8 +11,16 @@ window.tabahead = ($, Fuse, chrome, setTimeout, storage) ->
 
     all_colons = /:/g
 
+    relevant = (matches) ->
+        ret = []
+        $.each(matches, (i, pair) ->
+            ret.push pair if pair[1] > pair[0]
+        )
+        if ret.length is 0 then matches else ret
+
     highlight_matches = (matches, text) ->
-        pair = matches.shift()
+        relevant_matches = relevant(matches)
+        pair = relevant_matches.shift()
         result = []
         Array.from(text).forEach (_val, i) ->
             char = text.charAt(i)
@@ -20,7 +28,7 @@ window.tabahead = ($, Fuse, chrome, setTimeout, storage) ->
             result.push(char)
             if (pair and i is pair[1])
                 result.push('</strong>')
-                pair = matches.shift()
+                pair = relevant_matches.shift()
         result.join ''
 
     filter = (query, tabs) ->
