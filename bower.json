@@ -1,8 +1,7 @@
 {
   "name": "tab-ahead",
   "dependencies": {
-    "fuzzy-search": "0.1.1",
-    "fuse.js": "git+https://github.com/krisk/Fuse.git#fdb3c3e6d96343974fc5770362b3ec32090eb57b",
+    "fuse.js": "2.2.0",
     "flatstrap": "*",
     "jquery": "2.1.4",
     "array.from": "^0.2.1"
