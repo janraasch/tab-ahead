@@ -27,6 +27,7 @@ window.tabahead = ($, Fuse, chrome, setTimeout, storage) ->
         new Fuse(tabs,
             keys: ['title', 'url'],
             include: ['score', 'matches']
+            maxPatternLength: query.length
         ).search(query)
 
     source = (query, process) ->

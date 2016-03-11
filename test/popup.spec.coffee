@@ -76,6 +76,28 @@ describe 'Tab Ahead. Popup', ->
                     done()
             , 1
 
+    describe 'even with query input longer than 32 characters', ->
+        queryTabsSpy = {}
+
+        beforeEach ->
+            queryTabsSpy = (spyOn window.chrome.tabs, 'query').and.callThrough()
+            input = 'janjanjanjanjanjankarljanjanjanjanjanjanjanjanjanjanjanjankarljanjanjanjanjanjan'
+
+            $('#typeahead')
+                .val(input)
+                .trigger('keyup')
+
+        it 'should show suggestions', (done) ->
+            interval = setInterval ->
+                if ($ 'ul').length > 0
+                    clearInterval interval
+                    (expect $ 'ul').toHaveLength(1)
+
+                    # Add `\n` due to `new line at the end of the fixture.
+                    (expect ($ 'ul').html() + '\n').toBe window.__html__['test/fixtures/suggestions2.html']
+                    done()
+            , 1
+
     describe 'with the `pref/query` set to `all`', ->
         queryTabsSpy = {}
 
