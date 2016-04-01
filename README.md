@@ -1,5 +1,6 @@
 ![TabAhead](https://raw.github.com/janraasch/tab-ahead/master/app/images/icon-128.png)
 Tab Ahead [![Build Status](https://travis-ci.org/janraasch/tab-ahead.svg?branch=master)](https://travis-ci.org/janraasch/tab-ahead) [![Coverage Status](https://img.shields.io/coveralls/janraasch/tab-ahead.svg)](https://coveralls.io/r/janraasch/tab-ahead?branch=master) [![Release](http://img.shields.io/github/release/janraasch/tab-ahead.svg)](https://github.com/janraasch/tab-ahead/releases)
+==============================
 
 
 Lightweight [Chrome Extension](https://chrome.google.com/webstore/detail/tab-ahead/naoajjeoiblmpegfelhkapanmmaaghmi) that helps you to quickly find open tabs by title and url.
