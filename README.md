@@ -1,7 +1,5 @@
 ![TabAhead](https://raw.github.com/janraasch/tab-ahead/master/app/images/icon-128.png)
 Tab Ahead [![Build Status](https://travis-ci.org/janraasch/tab-ahead.svg?branch=master)](https://travis-ci.org/janraasch/tab-ahead) [![Coverage Status](https://img.shields.io/coveralls/janraasch/tab-ahead.svg)](https://coveralls.io/r/janraasch/tab-ahead?branch=master) [![Release](http://img.shields.io/github/release/janraasch/tab-ahead.svg)](https://github.com/janraasch/tab-ahead/releases)
-=========
-[![Dependency Status](https://gemnasium.com/janraasch/tab-ahead.svg)](https://gemnasium.com/janraasch/tab-ahead) [![devDependency Status](https://david-dm.org/janraasch/tab-ahead/dev-status.svg)](https://david-dm.org/janraasch/tab-ahead#info=devDependencies)
 
 
 Lightweight [Chrome Extension](https://chrome.google.com/webstore/detail/tab-ahead/naoajjeoiblmpegfelhkapanmmaaghmi) that helps you to quickly find open tabs by title and url.
@@ -22,6 +20,10 @@ Keyboard Shortcut
 Options
 ---------
 Choose whether to search in the context of the current window or over all (non-incognito) windows. Go to [chrome://extensions](chrome://extensions) and click the `Options` link next to the extension.
+
+Donations
+----------
+Please consider supporting my work on this extension by donating via [PayPal][paypal-dot-me] or [Bountysource][bountysource-me].
 
 
 Version History
@@ -72,3 +74,6 @@ License
 Copyright (c) 2016 Jan Raasch
 
 This project and its contents are open source under the MIT license.
+
+[paypal-dot-me]: https://www.paypal.me/janraasch/25
+[bountysource-me]: https://salt.bountysource.com/teams/tab-ahead
