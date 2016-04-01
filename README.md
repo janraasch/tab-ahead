@@ -44,7 +44,7 @@ Version History
 
 Thank You
 ------------
-* [Fuzzy](http://mattyork.github.io/fuzzy/) for the `fuzzy` filter.
+* [Fuse.js](http://kiro.me/projects/fuse.html) for the `fuzzy` filter.
 * [Bootstrap](http://twitter.github.io/bootstrap/) for the `<input id="typeahead">` field.
 * [Flatstrap](http://littlesparkvt.com/flatstrap/) for the lack of rounded corners and gradients.
 * [Font Awesome](http://fortawesome.github.io/Font-Awesome/) for the logo, i.e. `icon-folder-close (&#xf07b;)` + `icon-terminal (&#xf120;)`.
@@ -58,10 +58,6 @@ Alternatives
 * [TabJuggler](https://chrome.google.com/webstore/detail/tabjuggler/jgiplclhploodgnkcljjgddajfbmafmp/)
 * [TabManager](https://chrome.google.com/webstore/detail/tab-manager/coonecdghnepgiblpccbbihiahajndda/)
 
-Development
-------------
-[Fuse.js](http://kiro.me/projects/fuse.html) seems like a very nice fuzzy search implementation, too, but only supports queries of up to 32 characters and it does not report on the actual characters matched ([yet?](https://github.com/krisk/Fuse/issues/6)).
-
 Contributing
 --------------
 Pull requests and constructive issues are very welcome. In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt](http://gruntjs.com/).
@@ -73,9 +69,6 @@ Pull requests and constructive issues are very welcome. In lieu of a formal styl
 
 License
 ---------
-Copyright (c) 2013 Jan Raasch
+Copyright (c) 2016 Jan Raasch
 
 This project and its contents are open source under the MIT license.
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/janraasch/tab-ahead/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
