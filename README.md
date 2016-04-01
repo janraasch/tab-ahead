@@ -22,7 +22,7 @@ Options
 ---------
 Choose whether to search in the context of the current window or over all (non-incognito) windows. Go to [chrome://extensions](chrome://extensions) and click the `Options` link next to the extension.
 
-Donations
+Donations [![Pay me][insert-coins-svg]][paypal-dot-me]
 ----------
 Please consider supporting my work on this extension by donating via [PayPal][paypal-dot-me] or [Bountysource][bountysource-me].
 
@@ -78,3 +78,4 @@ This project and its contents are open source under the MIT license.
 
 [paypal-dot-me]: https://www.paypal.me/janraasch/25
 [bountysource-me]: https://salt.bountysource.com/teams/tab-ahead
+[insert-coins-svg]: https://img.shields.io/badge/insert-coins-11dde2.svg
