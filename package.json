@@ -5,8 +5,7 @@
   "devDependencies": {
     "coffeelint": "^1.6.1",
     "coveralls": "^2.11.3",
-    "grunt": "^0.4.5",
-    "grunt-cli": "~1.2.0",
+    "grunt": "^1.0.0",
     "grunt-coffeelint": "0.0.15",
     "grunt-concurrent": "^2.2.0",
     "grunt-contrib-clean": "^1.0.0",
@@ -42,12 +41,12 @@
     "time-grunt": "^1.2.1"
   },
   "scripts": {
-    "test": "node ./node_modules/grunt-cli/bin/grunt build",
-    "coveralls": "node ./node_modules/grunt-cli/bin/grunt shell:coveralls"
+    "test": "grunt build",
+    "coveralls": "grunt shell:coveralls"
   },
   "engines": {
-    "npm": ">=1.3.7",
-    "node": ">=0.10.0"
+    "npm": ">=3",
+    "node": ">=4"
   },
   "license": "MIT",
   "version": "1.2.2"
