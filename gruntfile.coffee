@@ -156,6 +156,9 @@ module.exports = (grunt) ->
                     '<%= yeoman.dist %>/manifest.json': [
                         '<%= yeoman.app %>/manifest.json'
                     ]
+                    '<%= yeoman.dist %>/images/insert-coins-ff7700.svg': [
+                        '<%= yeoman.app %>/images/insert-coins-ff7700.svg'
+                    ]
 
         purifycss:
             popup:
