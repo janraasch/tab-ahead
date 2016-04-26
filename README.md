@@ -29,6 +29,7 @@ Please consider supporting my work on this extension by donating via [PayPal][pa
 
 Version History
 ------------
+* v1.3.0 - Improve fuzzy filter ([Fuse.js](http://kiro.me/projects/fuse.html)) and disable autocomplete on search input.
 * v1.2.2 - Equal margins for search input field.
 * v1.2.1 - Even faster popup response time.
 * v1.2.0 - Faster popup opening by reducing css asset size by two thirds.
