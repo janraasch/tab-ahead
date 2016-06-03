@@ -6,7 +6,7 @@
     "coffeelint": "^1.6.1",
     "coveralls": "^2.11.3",
     "grunt": "^1.0.0",
-    "grunt-coffeelint": "0.0.15",
+    "grunt-coffeelint": "0.0.16",
     "grunt-concurrent": "^2.2.0",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-coffee": "^1.0.0",
