@@ -16,7 +16,7 @@
     "grunt-contrib-csslint": "^2.0.0",
     "grunt-contrib-cssmin": "^2.0.0",
     "grunt-contrib-htmlmin": "^2.0.0",
-    "grunt-contrib-imagemin": "^1.0.0",
+    "grunt-contrib-imagemin": "^2.0.0",
     "grunt-contrib-uglify": "^3.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-jsonlint": "^1.0.1",
