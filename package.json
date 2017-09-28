@@ -4,7 +4,7 @@
   "repository": "https://github.com/janraasch/tab-ahead",
   "devDependencies": {
     "coffeelint": "^1.6.1",
-    "coveralls": "^2.11.3",
+    "coveralls": "^3.0.0",
     "grunt": "^1.0.0",
     "grunt-coffeelint": "0.0.16",
     "grunt-concurrent": "^2.2.0",
