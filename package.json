@@ -3,7 +3,7 @@
   "name": "tab-ahead",
   "repository": "https://github.com/janraasch/tab-ahead",
   "devDependencies": {
-    "coffeelint": "^1.6.1",
+    "coffeelint": "^2.0.0",
     "coveralls": "^2.11.3",
     "grunt": "^1.0.0",
     "grunt-coffeelint": "0.0.16",
