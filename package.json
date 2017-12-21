@@ -26,7 +26,7 @@
     "grunt-usemin": "^3.0.0",
     "ibrik": "^2.0.0",
     "jasmine-core": "^2.3.4",
-    "karma": "^1.1.0",
+    "karma": "^2.0.0",
     "karma-chrome-launcher": "^2.0.0",
     "karma-coffee-preprocessor": "^1.0.0",
     "karma-coverage": "^1.0.0",
