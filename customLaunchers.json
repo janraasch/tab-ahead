@@ -3,7 +3,7 @@
         "base": "SauceLabs",
         "browserName": "chrome",
         "platform": "Linux",
-        "version": "68"
+        "version": "48"
     },
     "win10_chrome": {
         "base": "SauceLabs",
@@ -51,6 +51,6 @@
         "base": "SauceLabs",
         "browserName": "chrome",
         "platform": "OS X 10.9",
-        "version": "68"
+        "version": "65"
     }
   }
