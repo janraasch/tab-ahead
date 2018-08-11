@@ -1,11 +1,11 @@
 window.tabaheadOptions = (storage) ->
-    # --> Constants shared with `popup.coffee`
+    # --> Constants shared with popup.coffee
     QUERY =
         ALL: 'all'
         CURRENT: 'current'
 
     PREF_QUERY = 'pref/query'
-    # Constants shared with `popup.coffee` <--
+    # Constants shared with popup.coffee <--
 
     CLASSES =
         ACTIVE: 'active'
