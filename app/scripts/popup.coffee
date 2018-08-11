@@ -1,11 +1,11 @@
 window.tabahead = ($, Fuse, chrome, setTimeout, storage) ->
-    # --> Constants shared with `options.coffee`
+    # --> Constants shared with options.coffee
     QUERY =
         ALL: 'all'
         CURRENT: 'current'
 
     PREF_QUERY = 'pref/query'
-    # Constants shared with `options.coffee` <--
+    # Constants shared with options.coffee <--
 
     string_separator = ':::::'
 
@@ -65,9 +65,9 @@ window.tabahead = ($, Fuse, chrome, setTimeout, storage) ->
         "<div class=\"title\">#{highlighted.title}</div><small class=\"muted url\">#{highlighted.url}</small>"
 
     # Quick and dirty monkey patch
-    # Implemented `$.fn.data` instead of
-    # `$.fn.attr('data-value')`
-    # to be able to handle `item` objects
+    # Implemented $.fn.data instead of
+    # $.fn.attr('data-value')
+    # to be able to handle item objects
     # instead of simple strings.
     $.fn.typeahead.Constructor::render = (items) ->
         items = ($ items).map (i, item) =>
@@ -95,10 +95,10 @@ window.tabahead = ($, Fuse, chrome, setTimeout, storage) ->
                 window.close()
         ), 1
 
-        # `@hide()` suddenly caused the popup to stay open.
+        # @hide() suddenly caused the popup to stay open.
         return
 
-    # Init `typeahead`.
+    # Init typeahead.
     ($ '#typeahead').typeahead(
         source: source
         matcher: matcher
@@ -107,7 +107,7 @@ window.tabahead = ($, Fuse, chrome, setTimeout, storage) ->
         items: 10
     ).focus()
 
-    # Do not `submit` form,
+    # Do not submit form,
     # but reset input to empty string.
     ($ 'form').on 'submit', (event) ->
         ($ '#typeahead').val ''
