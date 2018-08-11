@@ -45,8 +45,8 @@
     "coveralls": "grunt shell:coveralls"
   },
   "engines": {
-    "npm": ">=3",
-    "node": ">=4"
+    "npm": ">=6",
+    "node": ">=10"
   },
   "license": "MIT",
   "version": "1.3.0"
