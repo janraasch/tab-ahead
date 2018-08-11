@@ -89,6 +89,8 @@ module.exports = (grunt) ->
         coffee:
             options:
                 sourceMap: true
+                transpile:
+                    presets: ['env']
             compile:
                 expand: true
                 flatten: true
