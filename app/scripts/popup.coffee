@@ -1,11 +1,15 @@
 window.tabahead = ($, Fuse, chrome, setTimeout, storage) ->
-    # --> Constants shared with options.coffee
+    # --> Constants shared with `options.coffee`
     QUERY =
         ALL: 'all'
         CURRENT: 'current'
 
     PREF_QUERY = 'pref/query'
-    # Constants shared with options.coffee <--
+
+    MAX_RESULTS_DEFAULT = 10
+
+    PREF_MAX_RESULTS = 'pref/max_results'
+    # Constants shared with `options.coffee` <--
 
     string_separator = ':::::'
 
@@ -99,12 +103,13 @@ window.tabahead = ($, Fuse, chrome, setTimeout, storage) ->
         return
 
     # Init typeahead.
+    items = if storage[PREF_MAX_RESULTS] > 0 then storage[PREF_MAX_RESULTS] else MAX_RESULTS_DEFAULT
     ($ '#typeahead').typeahead(
         source: source
         matcher: matcher
         sorter: sorter
         highlighter: highlighter
-        items: 10
+        items: items
     ).focus()
 
     # Do not submit form,

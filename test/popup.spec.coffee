@@ -5,6 +5,10 @@ describe 'Tab Ahead. Popup', ->
         CURRENT: 'current'
 
     PREF_QUERY = 'pref/query'
+
+    MAX_RESULTS_DEFAULT = 10
+
+    PREF_MAX_RESULTS = 'pref/max_results'
     # Constants shared with `options.coffee` <--
 
     # Mocking birds

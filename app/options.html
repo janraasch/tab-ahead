@@ -11,15 +11,22 @@
     <body>
         <div class="container">
           <div class="hero-unit">
-              <h2>Search for Tabs in</h2>
-              <ul class="nav nav-pills">
-                  <li id="current">
-                      <a href="#" title="current">Current Window</a>
-                  </li>
-                  <li id="all">
-                      <a href="#" title="all">All Windows</a>
-                  </li>
-              </ul>
+              <form>
+                <fieldset>
+                  <legend>Tab Ahead Options</legend>
+                  <label>Max Results</label>
+                  <input type="number" value="10" min="1" id="max_results">
+
+                  <label class="radio">
+                    <input type="radio" name="query" id="current" value="current"/>
+                    Search Tabs in Current Window
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="query" id="all" value="all"/>
+                    Search Tabs in All Windows
+                  </label>
+                </fieldset>
+              </form>
               <blockquote>
                   <p>A child of five could understand this. Send someone to fetch a child of five.</p>
                   <small>Groucho Marx</small>

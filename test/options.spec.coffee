@@ -5,10 +5,11 @@ describe 'Tab Ahead. Options', ->
         CURRENT: 'current'
 
     PREF_QUERY = 'pref/query'
-    # Constants shared with `popup.coffee` <--
 
-    CLASSES =
-        ACTIVE: 'active'
+    MAX_RESULTS_DEFAULT = 10
+
+    PREF_MAX_RESULTS = 'pref/max_results'
+    # Constants shared with `popup.coffee` <--
 
     beforeEach ->
         setFixtures window.__html__['test/fixtures/options.html']
@@ -30,8 +31,8 @@ describe 'Tab Ahead. Options', ->
             window.tabaheadOptions window.localStorage
 
         it 'will be set to `current`', ->
-            (expect $ '#current').toHaveClass CLASSES.ACTIVE
-            (expect $ '#all').not.toHaveClass CLASSES.ACTIVE
+            (expect $('#current').is(':checked')).toBe true
+            (expect $('#all').is(':checked')).toBe false
             (expect window.localStorage[PREF_QUERY]).toBe QUERY.CURRENT
 
     describe 'Clicking `#all`', ->
@@ -45,8 +46,8 @@ describe 'Tab Ahead. Options', ->
             (($ '#all').get 0).dispatchEvent event
 
         it 'should set the option to `all`', ->
-            (expect $ '#all').toHaveClass CLASSES.ACTIVE
-            (expect $ '#current').not.toHaveClass CLASSES.ACTIVE
+            (expect $('#all').is(':checked')).toBe true
+            (expect $('#current').is(':checked')).toBe false
             (expect window.localStorage[PREF_QUERY]).toBe QUERY.ALL
 
     describe 'Clicking `#current`', ->
@@ -60,6 +61,6 @@ describe 'Tab Ahead. Options', ->
             (($ '#current').get 0).dispatchEvent event
 
         it 'should set the option to `current`', ->
-            (expect $ '#current').toHaveClass CLASSES.ACTIVE
-            (expect $ '#all').not.toHaveClass CLASSES.ACTIVE
+            (expect $('#current').is(':checked')).toBe true
+            (expect $('#all').is(':checked')).toBe false
             (expect window.localStorage[PREF_QUERY]).toBe QUERY.CURRENT
