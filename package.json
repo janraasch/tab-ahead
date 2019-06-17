@@ -21,7 +21,7 @@
     "grunt-contrib-imagemin": "^3.1.0",
     "grunt-contrib-uglify": "^4.0.1",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-jsonlint": "^1.0.1",
+    "grunt-jsonlint": "^2.0.0",
     "grunt-karma": "^3.0.2",
     "grunt-purifycss": "^0.1.0",
     "grunt-shell": "^3.0.1",
