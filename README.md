@@ -1,5 +1,5 @@
 ![TabAhead](https://raw.github.com/janraasch/tab-ahead/master/app/images/icon-128.png)
-Tab Ahead [![Build Status](https://travis-ci.org/janraasch/tab-ahead.svg?branch=master)](https://travis-ci.org/janraasch/tab-ahead) [![Coverage Status](https://img.shields.io/coveralls/janraasch/tab-ahead.svg)](https://coveralls.io/r/janraasch/tab-ahead?branch=master) [![Release](http://img.shields.io/github/release/janraasch/tab-ahead.svg)](https://github.com/janraasch/tab-ahead/releases)
+Tab Ahead [![Build Status](https://travis-ci.org/janraasch/tab-ahead.svg?branch=master)](https://travis-ci.org/janraasch/tab-ahead) [![Coverage Status](https://img.shields.io/coveralls/janraasch/tab-ahead.svg)](https://coveralls.io/r/janraasch/tab-ahead?branch=master) [![Pay me][paypal-svg]][paypal-dot-me] [![Sponsor me][github-sponsors-svg]][github-sponsors]
 ==============================
 
 Lightweight [Chrome Extension](https://chrome.google.com/webstore/detail/tab-ahead/naoajjeoiblmpegfelhkapanmmaaghmi) that helps you to quickly find open tabs by title and url.
@@ -21,9 +21,12 @@ Options
 ---------
 Choose whether to search in the context of the current window or over all (non-incognito) windows. Go to [chrome://extensions](chrome://extensions) and click the `Options` link next to the extension.
 
-Donations [![Pay me][insert-coins-svg]][paypal-dot-me]
+Sponsor 💟
 ----------
-Please consider supporting my work on this extension by donating via [PayPal][paypal-dot-me] or [Bountysource][bountysource-me].
+
+Support my work on this piece of open-source software via [GitHub Sponsors][github-sponsors] (recurring) or [PayPal][paypal-dot-me] (one-time).
+
+[![GitHub Stats](https://github-readme-stats.vercel.app/api/?username=janraasch)][github-sponsors]
 
 
 Version History
@@ -77,6 +80,7 @@ Copyright (c) 2016 Jan Raasch
 
 This project and its contents are open source under the MIT license.
 
-[paypal-dot-me]: https://www.paypal.me/janraasch/25
-[bountysource-me]: https://salt.bountysource.com/teams/tab-ahead
-[insert-coins-svg]: https://img.shields.io/badge/insert-coins-11dde2.svg
+[paypal-dot-me]: https://www.paypal.me/janraasch/29,00
+[github-sponsors]: https://github.com/sponsors/janraasch
+[paypal-svg]: https://img.shields.io/badge/onetime-donation-11dde2.svg?logo=paypal
+[github-sponsors-svg]: https://img.shields.io/badge/recurring-sponsorship-ee4aaa.svg?logo=github
