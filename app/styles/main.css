@@ -5,7 +5,6 @@ body {
 }
 
 .navbar-search {
-    height: 35px;
     width: 500px;
 }
 
@@ -15,7 +14,7 @@ body {
     width: 458px;
 }
 
-.url { 
+.url {
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
