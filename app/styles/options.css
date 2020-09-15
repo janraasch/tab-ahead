@@ -10,4 +10,10 @@ a:hover {
   color: rgb(255, 119, 0);
 }
 
+.container {
+  max-width: 500px
+}
 
+.hero-unit {
+  padding: 40px 40px 15px 40px
+}
