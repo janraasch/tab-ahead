@@ -10,8 +10,12 @@ a:hover {
   color: rgb(255, 119, 0);
 }
 
+body {
+  margin: 0 30px;
+}
+
 .container {
-  max-width: 500px
+  max-width: 580px
 }
 
 .hero-unit {
