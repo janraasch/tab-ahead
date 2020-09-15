@@ -123,12 +123,12 @@
         "base": "SauceLabs",
         "browserName": "firefox",
         "platform": "OS X 10.11",
-        "version": "80"
+        "version": "78"
     },
     "osx10_10_firefox": {
         "base": "SauceLabs",
         "browserName": "firefox",
         "platform": "OS X 10.10",
-        "version": "80"
+        "version": "47"
     }
   }
