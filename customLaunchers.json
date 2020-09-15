@@ -65,12 +65,6 @@
         "platform": "OS X 10.10",
         "version": "85"
     },
-    "linux_firefox": {
-        "base": "SauceLabs",
-        "browserName": "firefox",
-        "platform": "Linux",
-        "version": "45"
-    },
     "win10_firefox": {
         "base": "SauceLabs",
         "browserName": "firefox",
@@ -124,11 +118,5 @@
         "browserName": "firefox",
         "platform": "OS X 10.11",
         "version": "78"
-    },
-    "osx10_10_firefox": {
-        "base": "SauceLabs",
-        "browserName": "firefox",
-        "platform": "OS X 10.10",
-        "version": "47"
     }
   }
