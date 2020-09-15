@@ -32,6 +32,7 @@ Support my work on this piece of open-source software via [GitHub Sponsors][gith
 
 Version History
 ------------
+* v1.3.1 - Initial release for FireFox. Previously this extension was only available on the Chrome browser. - **This is currently under review by the FireFox Team.**
 * v1.3.0 - Improve fuzzy filter ([Fuse.js](http://kiro.me/projects/fuse.html)) and disable autocomplete on search input.
 * v1.2.2 - Equal margins for search input field.
 * v1.2.1 - Even faster popup response time.
