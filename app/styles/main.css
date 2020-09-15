@@ -5,6 +5,7 @@ body {
 }
 
 .navbar-search {
+    margin-bottom: 4px;
     width: 500px;
 }
 
@@ -23,7 +24,8 @@ body {
 
 .dropdown-menu {
     background-color: rgb(233, 233, 233);
-    margin-bottom: 4px;
+    margin-bottom: 0;
+    margin-top: -2px;
 }
 
 .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus, .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus, .dropdown-submenu:hover>a, .dropdown-submenu:focus>a {
@@ -33,6 +35,7 @@ body {
 
 .navbar-search input[type="text"] {
     border-color: rgba(255, 119, 0, 0.8);
+    margin-bottom: 4px;
 }
 
 .text-info {
