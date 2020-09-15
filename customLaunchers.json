@@ -29,6 +29,18 @@
         "platform": "Windows 7",
         "version": "85"
     },
+    "osx10_15_chrome": {
+        "base": "SauceLabs",
+        "browserName": "chrome",
+        "platform": "OS X 10.15",
+        "version": "85"
+    },
+    "osx10_14_chrome": {
+        "base": "SauceLabs",
+        "browserName": "chrome",
+        "platform": "OS X 10.14",
+        "version": "85"
+    },
     "osx10_13_chrome": {
         "base": "SauceLabs",
         "browserName": "chrome",
