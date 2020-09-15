@@ -81,7 +81,7 @@ Copyright (c) 2016 Jan Raasch
 
 This project and its contents are open source under the MIT license.
 
-[paypal-dot-me]: https://www.paypal.me/janraasch/24,00
+[paypal-dot-me]: https://www.paypal.me/janraasch/14,00
 [github-sponsors]: https://github.com/sponsors/janraasch
 [paypal-svg]: https://img.shields.io/badge/onetime-donation-11dde2.svg?logo=paypal
 [github-sponsors-svg]: https://img.shields.io/badge/recurring-sponsorship-ee4aaa.svg?logo=github
