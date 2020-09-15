@@ -19,11 +19,12 @@
   "background": {
     "page": "bg.html"
   },
-  "options_page": "options.html",
+  "options_ui": {
+    "page": "options.html"
+  },
   "permissions": [
     "tabs"
   ],
-  "offline_enabled": true,
   "commands": {
     "_execute_browser_action": {
       "suggested_key": {

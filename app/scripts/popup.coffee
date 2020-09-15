@@ -116,4 +116,4 @@ window.tabahead = ($, Fuse, chrome, setTimeout, storage) ->
 
 # Go go go, unless we're unit testing this thing.
 unless window.__karma__?
-    window.tabahead window.jQuery, window.Fuse, window.chrome, window.setTimeout, window.localStorage
+    window.tabahead window.jQuery, window.Fuse, window.chrome or window.browser, window.setTimeout, window.localStorage
