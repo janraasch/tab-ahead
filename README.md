@@ -1,10 +1,11 @@
 ![TabAhead](https://raw.github.com/janraasch/tab-ahead/master/app/images/icon-128.png)
-Tab Ahead [![Build Status](https://travis-ci.org/janraasch/tab-ahead.svg?branch=master)](https://travis-ci.org/janraasch/tab-ahead) [![Coverage Status](https://img.shields.io/coveralls/janraasch/tab-ahead.svg)](https://coveralls.io/r/janraasch/tab-ahead?branch=master) [![Pay me][paypal-svg]][paypal-dot-me] [![Sponsor me][github-sponsors-svg]][github-sponsors]
+Tab Ahead [![Pay me][paypal-svg]][paypal-dot-me] [![Sponsor me][github-sponsors-svg]][github-sponsors]
 ==============================
+[![Build Status](https://travis-ci.org/janraasch/tab-ahead.svg?branch=master)](https://travis-ci.org/janraasch/tab-ahead) [![Coverage Status](https://img.shields.io/coveralls/janraasch/tab-ahead.svg)](https://coveralls.io/r/janraasch/tab-ahead?branch=master)
 
 Lightweight [Chrome Extension](https://chrome.google.com/webstore/detail/tab-ahead/naoajjeoiblmpegfelhkapanmmaaghmi) that helps you to quickly find open tabs by title and url.
 
-*Bringing Sublime Text's `Goto Anything...` to your Chrome Tabs.*
+*Bringing Visual Studio Code's `Goto Anything...` to your Browser Tabs.*
 
 Installation
 ------------
@@ -48,7 +49,7 @@ Version History
 * v1.0.0 - Initial release.
 
 
-Thank You
+Special Thanks 🎁
 ------------
 * [Fuse.js](http://kiro.me/projects/fuse.html) for the `fuzzy` filter.
 * [Bootstrap](http://twitter.github.io/bootstrap/) for the `<input id="typeahead">` field.
@@ -80,7 +81,7 @@ Copyright (c) 2016 Jan Raasch
 
 This project and its contents are open source under the MIT license.
 
-[paypal-dot-me]: https://www.paypal.me/janraasch/29,00
+[paypal-dot-me]: https://www.paypal.me/janraasch/24,00
 [github-sponsors]: https://github.com/sponsors/janraasch
 [paypal-svg]: https://img.shields.io/badge/onetime-donation-11dde2.svg?logo=paypal
 [github-sponsors-svg]: https://img.shields.io/badge/recurring-sponsorship-ee4aaa.svg?logo=github
