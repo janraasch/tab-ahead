@@ -26,6 +26,7 @@ body {
     background-color: rgb(233, 233, 233);
     margin-bottom: 4px;
     margin-top: -2px;
+    position: initial;
 }
 
 .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus, .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus, .dropdown-submenu:hover>a, .dropdown-submenu:focus>a {
