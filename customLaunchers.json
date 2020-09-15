@@ -64,5 +64,71 @@
         "browserName": "chrome",
         "platform": "OS X 10.10",
         "version": "85"
+    },
+    "linux_firefox": {
+        "base": "SauceLabs",
+        "browserName": "firefox",
+        "platform": "Linux",
+        "version": "45"
+    },
+    "win10_firefox": {
+        "base": "SauceLabs",
+        "browserName": "firefox",
+        "platform": "Windows 10",
+        "version": "80"
+    },
+    "win8_1_firefox": {
+        "base": "SauceLabs",
+        "browserName": "firefox",
+        "platform": "Windows 8.1",
+        "version": "80"
+    },
+    "win8_firefox": {
+        "base": "SauceLabs",
+        "browserName": "firefox",
+        "platform": "Windows 8",
+        "version": "80"
+    },
+    "win7_firefox": {
+        "base": "SauceLabs",
+        "browserName": "firefox",
+        "platform": "Windows 7",
+        "version": "80"
+    },
+    "osx10_15_firefox": {
+        "base": "SauceLabs",
+        "browserName": "firefox",
+        "platform": "OS X 10.15",
+        "version": "80"
+    },
+    "osx10_14_firefox": {
+        "base": "SauceLabs",
+        "browserName": "firefox",
+        "platform": "OS X 10.14",
+        "version": "80"
+    },
+    "osx10_13_firefox": {
+        "base": "SauceLabs",
+        "browserName": "firefox",
+        "platform": "OS X 10.13",
+        "version": "80"
+    },
+    "osx10_12_firefox": {
+        "base": "SauceLabs",
+        "browserName": "firefox",
+        "platform": "OS X 10.12",
+        "version": "80"
+    },
+    "osx10_11_firefox": {
+        "base": "SauceLabs",
+        "browserName": "firefox",
+        "platform": "OS X 10.11",
+        "version": "80"
+    },
+    "osx10_10_firefox": {
+        "base": "SauceLabs",
+        "browserName": "firefox",
+        "platform": "OS X 10.10",
+        "version": "80"
     }
   }
