@@ -3,14 +3,14 @@ Tab Ahead [![Pay me][paypal-svg]][paypal-dot-me] [![Sponsor me][github-sponsors-
 ==============================
 [![Build Status](https://travis-ci.org/janraasch/tab-ahead.svg?branch=master)](https://travis-ci.org/janraasch/tab-ahead) [![Coverage Status](https://img.shields.io/coveralls/janraasch/tab-ahead.svg)](https://coveralls.io/r/janraasch/tab-ahead?branch=master)
 
-Lightweight [Chrome Extension][chrome-extension-url] / [FireFox Add-On][firefox-addon-url] that helps you to quickly find open tabs by title and url.
+Lightweight [Chrome Extension][chrome-extension-url] / [Firefox Add-On][firefox-addon-url] that helps you to quickly find open tabs by title and url.
 
 *Bringing Visual Studio Code's `Goto Anything...` to your Browser Tabs.*
 
 Installation
 ------------
 
-[![Available on FireFox ADD-ONS][firefox-addons-image]][firefox-addon-url]
+[![Available on Firefox ADD-ONS][firefox-addons-image]][firefox-addon-url]
 
 [![Available in Chrome Web Store][chrome-web-store-image]][chrome-extension-url]
 
@@ -19,7 +19,7 @@ Keyboard Shortcut
 -------------------
 Press `Alt+T` to quickly open the search dialog.
 
-**FireFox**: Go to [about:addons](about:addons), click on the »gear-icon« in the upper right corner of the page and select `Manage Extension Shortcuts` to change or remove the default shortcut.
+**Firefox**: Go to [about:addons](about:addons), click on the »gear-icon« in the upper right corner of the page and select `Manage Extension Shortcuts` to change or remove the default shortcut.
 
 
 **Chrome**: Go to [chrome://extensions](chrome://extensions), open the menu on the left side by clicking on the »burger«-icon on the upper left corner of the page. Then click on `Keyboard shortcuts` to change or remove the default shortcut.
@@ -28,7 +28,7 @@ Options
 ---------
 Choose whether to search in the context of the current window or over all (non-incognito) windows.
 
-**FireFox**: Go to [about:addons](about:addons) and select »Tab Ahead«. Then click on `Preferences` to get to the »options«-page.
+**Firefox**: Go to [about:addons](about:addons) and select »Tab Ahead«. Then click on `Preferences` to get to the »options«-page.
 
 **Chrome**: Go to [chrome://extensions](chrome://extensions), click the `Details` link next to the extension. Then click `Extension options` to get to the »options«-page.
 
@@ -42,7 +42,7 @@ Support my work on this piece of open-source software via [GitHub Sponsors][gith
 
 Version History
 ------------
-* v1.3.1 - Initial release for FireFox. Previously this extension was only available on the Chrome browser. - **This is currently under review by the FireFox Team.**
+* v1.3.1 - Initial release for Firefox. Previously this extension was only available on the Chrome browser. - **This is currently under review by the Firefox Team.**
 * v1.3.0 - Improve fuzzy filter ([Fuse.js](http://kiro.me/projects/fuse.html)) and disable autocomplete on search input.
 * v1.2.2 - Equal margins for search input field.
 * v1.2.1 - Even faster popup response time.
