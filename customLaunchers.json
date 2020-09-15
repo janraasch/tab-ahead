@@ -9,48 +9,48 @@
         "base": "SauceLabs",
         "browserName": "chrome",
         "platform": "Windows 10",
-        "version": "69"
+        "version": "85"
     },
     "win8_1_chrome": {
         "base": "SauceLabs",
         "browserName": "chrome",
         "platform": "Windows 8.1",
-        "version": "69"
+        "version": "85"
     },
     "win8_chrome": {
         "base": "SauceLabs",
         "browserName": "chrome",
         "platform": "Windows 8",
-        "version": "69"
+        "version": "85"
     },
     "win7_chrome": {
         "base": "SauceLabs",
         "browserName": "chrome",
         "platform": "Windows 7",
-        "version": "69"
+        "version": "85"
     },
     "osx10_13_chrome": {
         "base": "SauceLabs",
         "browserName": "chrome",
         "platform": "OS X 10.13",
-        "version": "69"
+        "version": "85"
     },
     "osx10_12_chrome": {
         "base": "SauceLabs",
         "browserName": "chrome",
         "platform": "OS X 10.12",
-        "version": "69"
+        "version": "85"
     },
     "osx10_11_chrome": {
         "base": "SauceLabs",
         "browserName": "chrome",
         "platform": "OS X 10.11",
-        "version": "69"
+        "version": "85"
     },
     "osx10_10_chrome": {
         "base": "SauceLabs",
         "browserName": "chrome",
         "platform": "OS X 10.10",
-        "version": "69"
+        "version": "85"
     }
   }
