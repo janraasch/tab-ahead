@@ -5,7 +5,7 @@ body {
 }
 
 .navbar-search {
-    margin-bottom: 4px;
+    margin-bottom: 0px;
     width: 500px;
 }
 
@@ -24,7 +24,7 @@ body {
 
 .dropdown-menu {
     background-color: rgb(233, 233, 233);
-    margin-bottom: 0;
+    margin-bottom: 4px;
     margin-top: -2px;
 }
 
@@ -35,7 +35,7 @@ body {
 
 .navbar-search input[type="text"] {
     border-color: rgba(255, 119, 0, 0.8);
-    margin-bottom: 4px;
+    margin-bottom: 5px;
 }
 
 .text-info {
