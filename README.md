@@ -78,7 +78,7 @@ Pull requests and constructive issues are very welcome. In lieu of a formal styl
 
 License
 ---------
-Copyright (c) 2016 Jan Raasch
+Copyright (c) 2020 Jan Raasch
 
 This project and its contents are open source under the MIT license.
 
@@ -86,3 +86,7 @@ This project and its contents are open source under the MIT license.
 [github-sponsors]: https://github.com/sponsors/janraasch
 [paypal-svg]: https://img.shields.io/badge/onetime-donation-11dde2.svg?logo=paypal
 [github-sponsors-svg]: https://img.shields.io/badge/recurring-sponsorship-ee4aaa.svg?logo=github
+[firefox-addon-url]: https://addons.mozilla.org/en-US/developers/addon/tab-ahead-firefox
+[chrome-extension-url]: https://chrome.google.com/webstore/detail/tab-ahead/naoajjeoiblmpegfelhkapanmmaaghmi
+[chrome-web-store-image]: ./assets/app_store_icons/ChromeWebStore_BadgeWBorder_v2_206x58.png
+[firefox-addons-image]: ./assets/app_store_icons/get-the-addon-178x60px.dad84b42.png
