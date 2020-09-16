@@ -19,7 +19,7 @@ Keyboard Shortcut
 -------------------
 Press `Alt+T` to quickly open the search dialog.
 
-**Firefox**: Go to [about:addons](about:addons), click on the »gear-icon« in the upper right corner of the page and select `Manage Extension Shortcuts` to change or remove the default shortcut.
+**Firefox**: Go to [about:addons](about:addons), click on the »gear«-icon in the upper right corner of the page and select `Manage Extension Shortcuts` to change or remove the default shortcut.
 
 
 **Chrome**: Go to [chrome://extensions](chrome://extensions), open the menu on the left side by clicking on the »burger«-icon on the upper left corner of the page. Then click on `Keyboard shortcuts` to change or remove the default shortcut.
@@ -42,7 +42,7 @@ Support my work on this piece of open-source software via [GitHub Sponsors][gith
 
 Version History
 ------------
-* v1.3.1 - Initial release for Firefox. Previously this extension was only available on the Chrome browser. - **This is currently under review by the Firefox Team.**
+* v1.3.1 - Initial release for Firefox. Previously this extension was only available on the Chrome browser.
 * v1.3.0 - Improve fuzzy filter ([Fuse.js](http://kiro.me/projects/fuse.html)) and disable autocomplete on search input.
 * v1.2.2 - Equal margins for search input field.
 * v1.2.1 - Even faster popup response time.
@@ -67,7 +67,7 @@ Special Thanks 🎁
 * [Flatstrap](http://littlesparkvt.com/flatstrap/) for the lack of rounded corners and gradients.
 * [Font Awesome](http://fortawesome.github.io/Font-Awesome/) for the logo, i.e. `icon-folder-close (&#xf07b;)` + `icon-terminal (&#xf120;)`.
 * [Sublime Text](http://www.sublimetext.com/) for the inspiration i.e. `command+T/P` on OSX, `ctrl+P` on Linux and Windows.
-* [Christian](http://ckapke.de/) for helping me out with the popup icon.
+* [Christian](https://proagile.de/) for helping me out with the popup icon.
 
 Alternatives
 -------------
