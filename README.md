@@ -14,7 +14,7 @@ Installation
 
 [![Available in Chrome Web Store][chrome-web-store-image]][chrome-extension-url]
 
-**Edge**: Go to [edge://extensions/](edge://extensions/) and enable `Allow extensions from other stores`. Then you can navigate to the [Chrome Web Store][chrome-extension-url] and click `Add to Chrome`. Note: We will also publish this to the native [Edge Add-Ons Store](https://microsoftedge.microsoft.com/addons/Microsoft-Edge-Extensions-Home) in the near future.
+**Edge**: Go to [edge://extensions](edge://extensions) and enable `Allow extensions from other stores`. Then you can navigate to the [Chrome Web Store][chrome-extension-url] and click `Add to Chrome`. Note: We will also publish this to the native [Edge Add-Ons Store](https://microsoftedge.microsoft.com/addons/Microsoft-Edge-Extensions-Home) in the near future.
 
 
 Keyboard Shortcut
