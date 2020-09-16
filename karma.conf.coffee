@@ -59,19 +59,22 @@ module.exports = (config) ->
             # **Caveat**. `.coffee` files processed by `coverage`
             # should not be processed by `coffee`.
             # https://github.com/karma-runner/karma-coverage/pull/19#issuecomment-29186243
-            'app/scripts/*.coffee': ['coverage']
+            'app/scripts/*.coffee': ['coffee-coverage']
             'test/*.spec.coffee': ['coffee']
             'test/fixtures/*.html': ['html2js']
 
         # possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
         reporters: reporters
 
+
+        coffeeCoverage: {
+            preprocessor: {
+                instrumentor: 'istanbul'
+            }
+        }
+
         # configure the reporter
         coverageReporter:
-            instrumenters:
-                ibrik: require('ibrik')
-            instrumenter:
-                '**/*.coffee': 'ibrik'
             reporters: [{
                     type: 'text-summary'
                     dir: 'coverage/'
