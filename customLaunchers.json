@@ -1,10 +1,4 @@
 {
-    "linux_chrome": {
-        "base": "SauceLabs",
-        "browserName": "chrome",
-        "platform": "Linux",
-        "version": "48"
-    },
     "win10_chrome": {
         "base": "SauceLabs",
         "browserName": "chrome",
