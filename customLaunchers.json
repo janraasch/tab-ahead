@@ -118,5 +118,47 @@
         "browserName": "firefox",
         "platform": "OS X 10.11",
         "version": "78"
+    },
+    "win10_edge": {
+        "base": "SauceLabs",
+        "browserName": "MicrosoftEdge",
+        "platform": "Windows 10",
+        "version": "84"
+    },
+    "osx10_15_edge": {
+        "base": "SauceLabs",
+        "browserName": "MicrosoftEdge",
+        "platform": "OS X 10.15",
+        "version": "84"
+    },
+    "osx10_14_edge": {
+        "base": "SauceLabs",
+        "browserName": "MicrosoftEdge",
+        "platform": "OS X 10.14",
+        "version": "84"
+    },
+    "osx10_13_edge": {
+        "base": "SauceLabs",
+        "browserName": "MicrosoftEdge",
+        "platform": "OS X 10.13",
+        "version": "84"
+    },
+    "osx10_12_edge": {
+        "base": "SauceLabs",
+        "browserName": "MicrosoftEdge",
+        "platform": "OS X 10.12",
+        "version": "84"
+    },
+    "osx10_11_edge": {
+        "base": "SauceLabs",
+        "browserName": "MicrosoftEdge",
+        "platform": "OS X 10.11",
+        "version": "81"
+    },
+    "osx10_10_edge": {
+        "base": "SauceLabs",
+        "browserName": "MicrosoftEdge",
+        "platform": "OS X 10.10",
+        "version": "81"
     }
   }
