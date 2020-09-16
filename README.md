@@ -94,7 +94,7 @@ Pull requests and constructive issues are very welcome. In lieu of a formal styl
 
 License
 ---------
-Copyright (c) 2020 Jan Raasch
+Copyright (c) 2020 [Jan Raasch](https://www.janraasch.com)
 
 This project and its contents are open source under the MIT license.
 
