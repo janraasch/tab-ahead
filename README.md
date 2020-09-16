@@ -3,7 +3,7 @@ Tab Ahead [![Pay me][paypal-svg]][paypal-dot-me] [![Sponsor me][github-sponsors-
 ==============================
 [![Build Status](https://travis-ci.org/janraasch/tab-ahead.svg?branch=master)](https://travis-ci.org/janraasch/tab-ahead) [![Coverage Status](https://img.shields.io/coveralls/janraasch/tab-ahead.svg)](https://coveralls.io/r/janraasch/tab-ahead?branch=master)
 
-Lightweight [Chrome Extension][chrome-extension-url] / [Firefox Add-On][firefox-addon-url] that helps you to quickly find open tabs by title and url.
+Lightweight [Chrome Extension][chrome-extension-url] / [Firefox Add-On][firefox-addon-url] / Microsoft Edge Add-On that helps you to quickly find open tabs by title and url.
 
 *Bringing Visual Studio Code's `Goto Anything...` to your Browser Tabs.*
 
@@ -13,6 +13,8 @@ Installation
 [![Available on Firefox ADD-ONS][firefox-addons-image]][firefox-addon-url]
 
 [![Available in Chrome Web Store][chrome-web-store-image]][chrome-extension-url]
+
+**Edge**: Go to [edge://extensions/](edge://extensions/) and enable `Allow extensions from other stores`. Then you can navigate to the [Chrome Web Store][chrome-extension-url] and click `Add to Chrome`. Note: We will also publish this to the native [Edge Add-Ons Store](https://microsoftedge.microsoft.com/addons/Microsoft-Edge-Extensions-Home) in the near future.
 
 
 Keyboard Shortcut
@@ -24,6 +26,8 @@ Press `Alt+T` to quickly open the search dialog.
 
 **Chrome**: Go to [chrome://extensions](chrome://extensions), open the menu on the left side by clicking on the »burger«-icon on the upper left corner of the page. Then click on `Keyboard shortcuts` to change or remove the default shortcut.
 
+**Edge**: Go to [edge://extensions](edge://extensions). Then select `Keyboard shortcuts` on the left sidebar menu to change or remove the default shortcut.
+
 Options
 ---------
 Choose whether to search in the context of the current window or over all (non-incognito) windows.
@@ -31,6 +35,8 @@ Choose whether to search in the context of the current window or over all (non-i
 **Firefox**: Go to [about:addons](about:addons) and select »Tab Ahead«. Then click on `Preferences` to get to the »options«-page.
 
 **Chrome**: Go to [chrome://extensions](chrome://extensions), click the `Details` link next to the extension. Then click `Extension options` to get to the »options«-page.
+
+**Edge**: Go to [edge://extensions](edge://extensions), click `Tab Ahead >> Details`. Then click `Extension options` to get to the »options«-page.
 
 Sponsor 💟
 ----------
