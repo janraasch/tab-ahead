@@ -16,14 +16,11 @@
     "default_title": "Tab Ahead",
     "default_popup": "popup.html"
   },
-  "background": {
-    "page": "bg.html"
-  },
   "options_ui": {
     "page": "options.html"
   },
   "permissions": [
-    "tabs"
+    "tabs", "<all_urls>"
   ],
   "commands": {
     "_execute_browser_action": {
@@ -35,5 +32,5 @@
       }
     }
   },
-  "version": "1.3.1"
+  "version": "1.3.2"
 }
