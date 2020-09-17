@@ -9,8 +9,6 @@ describe 'Tab Ahead. Popup', ->
 
     # Mocking birds
     window.chrome =
-        storage:
-            local: {}
         windows:
             update: (windowId, updateInfo, callback) ->
                 callback?()
@@ -28,12 +26,12 @@ describe 'Tab Ahead. Popup', ->
 
     beforeEach ->
         setFixtures window.__html__['test/fixtures/form.html']
-        window.chrome.storage.local[PREF_QUERY] = undefined
+        window.localStorage[PREF_QUERY] = undefined
         window.tabahead window.jQuery,
             window.Fuse,
             window.chrome,
             window.setTimeout,
-            window.chrome.storage.local
+            window.localStorage
 
     describe 'loaded without exploding', ->
         it 'is available', ->
@@ -104,7 +102,7 @@ describe 'Tab Ahead. Popup', ->
         queryTabsSpy = {}
 
         beforeEach ->
-            window.chrome.storage.local[PREF_QUERY] = QUERY.ALL
+            window.localStorage[PREF_QUERY] = QUERY.ALL
 
         beforeEach ->
             queryTabsSpy = (spyOn window.chrome.tabs, 'query').and.callThrough()
@@ -182,7 +180,7 @@ describe 'Tab Ahead. Popup', ->
             updateWindowSpy = {}
             beforeEach ->
                 updateWindowSpy = (spyOn window.chrome.windows, 'update').and.callThrough()
-                window.chrome.storage.local[PREF_QUERY] = QUERY.ALL
+                window.localStorage[PREF_QUERY] = QUERY.ALL
 
             beforeEach (done) ->
                 $('#typeahead')

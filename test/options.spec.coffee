@@ -12,8 +12,7 @@ describe 'Tab Ahead. Options', ->
 
     beforeEach ->
         setFixtures window.__html__['test/fixtures/options.html']
-        window.browser = storage:
-            local: {}
+        window.localStorage[PREF_QUERY] = undefined
 
     describe 'loaded without exploding', ->
         it 'is available', ->
@@ -27,17 +26,17 @@ describe 'Tab Ahead. Options', ->
 
     describe 'Initially the option', ->
         beforeEach ->
-            window.browser.storage.local[PREF_QUERY] = undefined
-            window.tabaheadOptions window.browser.storage.local
+            window.localStorage[PREF_QUERY] = undefined
+            window.tabaheadOptions window.localStorage
 
         it 'will be set to `current`', ->
             (expect $ '#current').toHaveClass CLASSES.ACTIVE
             (expect $ '#all').not.toHaveClass CLASSES.ACTIVE
-            (expect window.browser.storage.local[PREF_QUERY]).toBe QUERY.CURRENT
+            (expect window.localStorage[PREF_QUERY]).toBe QUERY.CURRENT
 
     describe 'Clicking `#all`', ->
         beforeEach ->
-            window.tabaheadOptions window.browser.storage.local
+            window.tabaheadOptions window.localStorage
 
             # Simply using `$.trigger` won't work in `PhantomJS`.
             event = document.createEvent 'MouseEvents'
@@ -48,11 +47,11 @@ describe 'Tab Ahead. Options', ->
         it 'should set the option to `all`', ->
             (expect $ '#all').toHaveClass CLASSES.ACTIVE
             (expect $ '#current').not.toHaveClass CLASSES.ACTIVE
-            (expect window.browser.storage.local[PREF_QUERY]).toBe QUERY.ALL
+            (expect window.localStorage[PREF_QUERY]).toBe QUERY.ALL
 
     describe 'Clicking `#current`', ->
         beforeEach ->
-            window.tabaheadOptions window.browser.storage.local
+            window.tabaheadOptions window.localStorage
 
             # Simply using `$.trigger` won't work in `PhantomJS`.
             event = document.createEvent 'MouseEvents'
@@ -63,4 +62,4 @@ describe 'Tab Ahead. Options', ->
         it 'should set the option to `current`', ->
             (expect $ '#current').toHaveClass CLASSES.ACTIVE
             (expect $ '#all').not.toHaveClass CLASSES.ACTIVE
-            (expect window.browser.storage.local[PREF_QUERY]).toBe QUERY.CURRENT
+            (expect window.localStorage[PREF_QUERY]).toBe QUERY.CURRENT

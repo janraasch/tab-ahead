@@ -23,7 +23,7 @@
     "page": "options.html"
   },
   "permissions": [
-    "storage", "tabs"
+    "tabs"
   ],
   "commands": {
     "_execute_browser_action": {

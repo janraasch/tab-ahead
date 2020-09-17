@@ -47,4 +47,4 @@ window.tabaheadOptions = (storage) ->
     ui.update()
 
 # Go go go, unless we're unit testing this thing.
-window.tabaheadOptions (window.chrome or window.browser).storage.local unless window.__karma__?
+window.tabaheadOptions window.localStorage unless window.__karma__?
