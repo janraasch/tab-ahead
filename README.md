@@ -48,6 +48,7 @@ Support my work on this piece of open-source software via [GitHub Sponsors][gith
 
 Version History
 ------------
+* v1.4.0 - Add dark color scheme for dark mode.
 * v1.3.1 - Initial release for Firefox. Previously this extension was only available on the Chrome browser.
 * v1.3.0 - Improve fuzzy filter ([Fuse.js](http://kiro.me/projects/fuse.html)) and disable autocomplete on search input.
 * v1.2.2 - Equal margins for search input field.
