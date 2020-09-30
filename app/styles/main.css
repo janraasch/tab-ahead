@@ -46,3 +46,36 @@ body {
 .muted {
     color: rgb(100, 100, 100);
 }
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgb(38, 38, 38)), color-stop(1, rgb(28, 28, 28)));
+        color: #ddd;
+    }
+
+    .dropdown-menu {
+        background-color: #222;
+    }
+
+    .dropdown-menu > li > a {
+        color: #ddd;
+    }
+
+    .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus, .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus, .dropdown-submenu:hover>a, .dropdown-submenu:focus>a {
+        background-color: #333;
+    }
+
+    .text-info {
+        color: rgb(233, 109, 0);
+    }
+
+    .muted {
+        color: #ccc;
+    }
+
+    .navbar-search input[type="text"] {
+        background-color: #222;
+        border-color: rgba(233, 109, 0, 0.8);
+        color: #ddd;
+    }
+}
