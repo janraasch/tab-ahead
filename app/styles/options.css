@@ -21,3 +21,30 @@ body {
 .hero-unit {
   padding: 40px 40px 15px 40px
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgb(38, 38, 38)), color-stop(1, rgb(28, 28, 28)));
+    color: #ddd;
+  }
+
+  h1, h2 {
+    color: #eee;
+  }
+
+  .hero-unit {
+    background-color: #444;
+  }
+
+  .nav-pills > .active > a, .nav-pills > .active > a:hover, .nav-pills > .active > a:focus {
+    background-color: rgb(233, 109, 0);
+  }
+
+  a {
+    color: rgb(233, 109, 0);
+  }
+
+  a:hover {
+    color: rgb(233, 109, 0);
+  }
+}
