@@ -9,6 +9,15 @@
     "128": "images/icon-128.png"
   },
   "browser_action": {
+    "theme_icons": [{
+      "dark": "images/icon-19.png",
+      "light": "images/icon-dark-19.png",
+      "size": 19
+    }, {
+      "dark": "images/icon-38.png",
+      "light": "images/icon-dark-38.png",
+      "size": 38
+    }],
     "default_icon": {
       "19": "images/icon-19.png",
       "38": "images/icon-38.png"
