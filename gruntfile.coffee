@@ -104,7 +104,7 @@ module.exports = (grunt) ->
                 configFile: 'karma.conf.coffee'
             e2e: {}
             watch:
-                browsers: ['Chrome', 'PhantomJS']
+                browsers: ['Chrome']
                 autoWatch: false
                 background: true
                 singleRun: false
