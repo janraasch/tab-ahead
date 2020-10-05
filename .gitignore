@@ -4,7 +4,8 @@ temp
 .tmp
 npm-debug.log
 /.sauce.json
-/dist
+/dist/
+!app/bower_components/fuse.js/dist/fuse.js
 zip
 coverage/
 app/scripts/*.js

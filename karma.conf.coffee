@@ -37,7 +37,7 @@ module.exports = (config) ->
             'app/bower_components/array.from/array-from.js'
 
             # External dependencies.
-            'app/bower_components/fuse.js/src/fuse.min.js'
+            'app/bower_components/fuse.js/dist/fuse.js'
             'app/bower_components/jquery/dist/jquery.js'
             'app/bower_components/flatstrap/assets/js/bootstrap-typeahead.js'
 
