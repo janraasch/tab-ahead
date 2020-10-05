@@ -101,7 +101,7 @@ module.exports = (config) ->
         singleRun: true
 
         # SauceLabs
-        browsers: if useSauce then Object.keys(customLaunchers) else ['PhantomJS']
+        browsers: if useSauce then Object.keys(customLaunchers) else ['Chrome']
         customLaunchers: if useSauce then customLaunchers else {}
         sauceLabs: testName: 'Tab Ahead'
         tags: tags
