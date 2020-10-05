@@ -1,7 +1,7 @@
 {
   "name": "tab-ahead",
   "dependencies": {
-    "fuse.js": "2.2.0",
+    "fuse.js": "6.4.1",
     "flatstrap": "*",
     "jquery": "2.1.4",
     "array.from": "^0.2.1"

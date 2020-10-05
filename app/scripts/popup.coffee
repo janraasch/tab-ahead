@@ -34,8 +34,8 @@ window.tabahead = ($, Fuse, chrome, setTimeout, storage) ->
     filter = (query, tabs) ->
         new Fuse(tabs,
             keys: ['title', 'url'],
-            include: ['score', 'matches']
-            maxPatternLength: query.length
+            includeMatches: true,
+            findAllMatches: true
         ).search(query)
 
     source = (query, process) ->

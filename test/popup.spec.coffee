@@ -72,6 +72,7 @@ describe 'Tab Ahead. Popup', ->
                     (expect $ 'ul').toHaveLength(1)
 
                     # Add `\n` due to `new line at the end of the fixture.
+                    # console.log(($ 'ul').html()) # uncomment when updating fuse.js :-)
                     (expect ($ 'ul').html() + '\n').toBe window.__html__['test/fixtures/suggestions.html']
                     done()
             , 1
@@ -81,7 +82,7 @@ describe 'Tab Ahead. Popup', ->
 
         beforeEach ->
             queryTabsSpy = (spyOn window.chrome.tabs, 'query').and.callThrough()
-            input = 'janjanjanjanjanjankarljanjanjanjanjanjanjanjanjanjanjanjankarljanjanjanjanjanjan'
+            input = 'https://github.com/janraasch?tab=repositories'
 
             $('#typeahead')
                 .val(input)
