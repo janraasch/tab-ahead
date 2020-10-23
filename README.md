@@ -45,6 +45,11 @@ Support my work on this piece of open-source software via [GitHub Sponsors][gith
 
 [![GitHub Stats](https://github-readme-stats.vercel.app/api/?username=janraasch)][github-sponsors]
 
+Privacy Policy
+---------------
+
+We do not find you to be all that interesting. Your questionable browsing history should remain between you and the NSA. Tab Ahead functions without any outbound communication. Period.
+
 
 Version History
 ------------
