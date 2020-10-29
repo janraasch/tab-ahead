@@ -14,7 +14,7 @@ Installation
 
 [![Available in Chrome Web Store][chrome-web-store-image]][chrome-extension-url]
 
-**Edge**: Go to [edge://extensions](edge://extensions) and enable `Allow extensions from other stores`. Then you can navigate to the [Chrome Web Store][chrome-extension-url] and click `Add to Chrome`. Note: We will also publish this to the native [Edge Add-Ons Store](https://microsoftedge.microsoft.com/addons/Microsoft-Edge-Extensions-Home) in the near future.
+[![Available on Microsoft Edge Add-ons][edge-store-image]][edge-addon-url]
 
 
 Keyboard Shortcut
@@ -53,7 +53,7 @@ We do not find you to be all that interesting. Your questionable browsing histor
 
 Version History
 ------------
-* v1.5.0 - Improve fuzzy search by updating [Fuse.js](http://kiro.me/projects/fuse.html) from `v2` to `v6`.
+* v1.5.0 - Improve fuzzy search by updating [Fuse.js](http://kiro.me/projects/fuse.html) from `v2` to `v6`. Initial release for Microsoft Edge.
 * v1.4.0 - Add dark color scheme for dark mode.
 * v1.3.1 - Initial release for Firefox. Previously this extension was only available on the Chrome browser.
 * v1.3.0 - Improve fuzzy filter ([Fuse.js](http://kiro.me/projects/fuse.html)) and disable autocomplete on search input.
@@ -111,5 +111,7 @@ This project and its contents are open source under the MIT license.
 [github-sponsors-svg]: https://img.shields.io/badge/recurring-sponsorship-ee4aaa.svg?logo=github
 [firefox-addon-url]: https://addons.mozilla.org/en-US/firefox/addon/tab-ahead-firefox/
 [chrome-extension-url]: https://chrome.google.com/webstore/detail/tab-ahead/naoajjeoiblmpegfelhkapanmmaaghmi
+[edge-addon-url]: https://microsoftedge.microsoft.com/addons/detail/tab-ahead/mlphickdkheghookfcfopknnoedflmjl
 [chrome-web-store-image]: https://raw.github.com/janraasch/tab-ahead/master/assets/app_store_icons/ChromeWebStore_BadgeWBorder_v2_206x58.png
 [firefox-addons-image]: https://raw.github.com/janraasch/tab-ahead/master/assets/app_store_icons/get-the-addon-178x60px.dad84b42.png
+[edge-store-image]: https://raw.github.com/janraasch/tab-ahead/master/assets/app_store_icons/English_get-it-from-MS.png
