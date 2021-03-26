@@ -29,10 +29,10 @@ describe 'Tab Ahead. Options', ->
             window.localStorage[PREF_QUERY] = undefined
             window.tabaheadOptions window.localStorage
 
-        it 'will be set to `current`', ->
-            (expect $ '#current').toHaveClass CLASSES.ACTIVE
-            (expect $ '#all').not.toHaveClass CLASSES.ACTIVE
-            (expect window.localStorage[PREF_QUERY]).toBe QUERY.CURRENT
+        it 'will be set to `all`', ->
+            (expect $ '#current').not.toHaveClass CLASSES.ACTIVE
+            (expect $ '#all').toHaveClass CLASSES.ACTIVE
+            (expect window.localStorage[PREF_QUERY]).toBe QUERY.ALL
 
     describe 'Clicking `#all`', ->
         beforeEach ->

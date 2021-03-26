@@ -41,7 +41,7 @@ window.tabaheadOptions = (storage) ->
         false
 
     # Init default pref
-    storage[PREF_QUERY] = QUERY.CURRENT unless storage[PREF_QUERY]
+    storage[PREF_QUERY] = QUERY.ALL unless storage[PREF_QUERY]
 
     # Init UI state
     ui.update()
