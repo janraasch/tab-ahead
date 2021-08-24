@@ -32,7 +32,7 @@
     "karma-coffee-coverage": "^2.0.0",
     "karma-coffee-preprocessor": "^1.0.0",
     "karma-coverage": "^2.0.3",
-    "karma-firefox-launcher": "^2.1.0",
+    "karma-firefox-launcher": "^2.1.1",
     "karma-html2js-preprocessor": "^1.0.0",
     "karma-jasmine": "^4.0.1",
     "karma-sauce-launcher": "^4.3.6",
