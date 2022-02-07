@@ -27,7 +27,7 @@
     "grunt-shell": "^3.0.1",
     "grunt-usemin": "^3.0.0",
     "jasmine-core": "^4.0.0",
-    "karma": "^6.3.13",
+    "karma": "^6.3.15",
     "karma-chrome-launcher": "^3.1.0",
     "karma-coffee-coverage": "^2.0.0",
     "karma-coffee-preprocessor": "^1.0.0",
