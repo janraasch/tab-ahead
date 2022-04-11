@@ -7,7 +7,7 @@
     "babel-preset-env": "^1.7.0",
     "coffeelint": "^2.1.0",
     "coveralls": "^3.1.1",
-    "grunt": "^1.4.1",
+    "grunt": "^1.5.0",
     "grunt-coffeelint": "0.0.16",
     "grunt-concurrent": "^3.0.0",
     "grunt-contrib-clean": "^2.0.0",
