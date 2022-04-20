@@ -10,7 +10,7 @@
     "grunt": "^1.5.2",
     "grunt-coffeelint": "0.0.16",
     "grunt-concurrent": "^3.0.0",
-    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-clean": "^2.0.1",
     "grunt-contrib-coffee": "^2.1.0",
     "grunt-contrib-compress": "^2.0.0",
     "grunt-contrib-concat": "^2.1.0",
