@@ -1,5 +1,5 @@
 ![TabAhead](https://raw.github.com/janraasch/tab-ahead/master/app/images/icon-128.png)
-Tab Ahead [![Pay me][paypal-svg]][paypal-dot-me] [![Sponsor me][github-sponsors-svg]][github-sponsors]
+Tab Ahead
 ==============================
 [![Build Status](https://travis-ci.org/janraasch/tab-ahead.svg?branch=master)](https://travis-ci.org/janraasch/tab-ahead) [![Coverage Status](https://img.shields.io/coveralls/janraasch/tab-ahead.svg)](https://coveralls.io/r/janraasch/tab-ahead?branch=master)
 
