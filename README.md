@@ -38,13 +38,6 @@ Choose whether to search in the context of the current window or over all (non-i
 
 **Edge**: Go to [edge://extensions](edge://extensions), click `Tab Ahead >> Details`. Then click `Extension options` to get to the »options«-page.
 
-Sponsor 💟
-----------
-
-Support my work on this piece of open-source software via [GitHub Sponsors][github-sponsors] (recurring) or [PayPal][paypal-dot-me] (one-time).
-
-[![GitHub Stats](https://github-readme-stats.vercel.app/api/?username=janraasch)][github-sponsors]
-
 Privacy Policy
 ---------------
 
