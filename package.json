@@ -26,7 +26,7 @@
     "grunt-purifycss": "^0.1.0",
     "grunt-shell": "^4.0.0",
     "grunt-usemin": "^3.0.0",
-    "jasmine-core": "^4.1.0",
+    "jasmine-core": "^5.1.2",
     "karma": "^6.3.19",
     "karma-chrome-launcher": "^3.1.1",
     "karma-coffee-coverage": "^2.0.0",
