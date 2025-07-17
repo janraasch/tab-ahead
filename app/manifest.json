@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Tab Ahead",
   "short_name": "Tab Ahead",
   "description": "Tab Ahead lets you type ahead to quickly find open tabs by title and URL.",
@@ -8,19 +8,7 @@
     "48": "images/icon-48.png",
     "128": "images/icon-128.png"
   },
-  "browser_action": {
-    "theme_icons": [
-      {
-        "dark": "images/icon-19.png",
-        "light": "images/icon-dark-19.png",
-        "size": 19
-      },
-      {
-        "dark": "images/icon-38.png",
-        "light": "images/icon-dark-38.png",
-        "size": 38
-      }
-    ],
+  "action": {
     "default_icon": {
       "19": "images/icon-19.png",
       "38": "images/icon-38.png"
@@ -29,7 +17,7 @@
     "default_popup": "popup.html"
   },
   "background": {
-    "page": "bg.html"
+    "service_worker": "background.js"
   },
   "options_ui": {
     "page": "options.html"
@@ -38,7 +26,7 @@
     "tabs"
   ],
   "commands": {
-    "_execute_browser_action": {
+    "_execute_action": {
       "suggested_key": {
         "windows": "Alt+T",
         "mac": "Alt+T",
@@ -47,5 +35,5 @@
       }
     }
   },
-  "version": "1.5.0"
+  "version": "1.6.0"
 }

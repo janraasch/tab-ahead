@@ -149,6 +149,9 @@ module.exports = (grunt) ->
                     '<%= yeoman.dist %>/manifest.json': [
                         '<%= yeoman.app %>/manifest.json'
                     ]
+                    '<%= yeoman.dist %>/background.js': [
+                        '<%= yeoman.app %>/background.js'
+                    ]
             images:
                 files: [
                     expand: true
