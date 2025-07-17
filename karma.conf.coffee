@@ -14,10 +14,6 @@ module.exports = (config) ->
             process.env.SAUCE_USERNAME = username if username?
             process.env.SAUCE_ACCESS_KEY = accessKey if accessKey?
 
-    tags = []
-    tags.push "pr-#{process.env.TRAVIS_PULL_REQUEST}" if process.env.TRAVIS_PULL_REQUEST
-    tags.push "branch-#{process.env.TRAVIS_BRANCH}" if process.env.TRAVIS_BRANCH
-
     unless process.env.SAUCE_USERNAME? and process.env.SAUCE_ACCESS_KEY?
         console.warn 'env.SAUCE_USERNAME and env.SAUCE_ACCESS_KEY are undefined'
         console.warn 'Falling back to using local browsers instead of Sauce Labs'
@@ -99,11 +95,6 @@ module.exports = (config) ->
         # Continuous Integration mode
         # if true, it capture browsers, run tests and exit
         singleRun: true
-
-        # SauceLabs
-        browsers: if useSauce then Object.keys(customLaunchers) else ['Chrome']
-        customLaunchers: if useSauce then customLaunchers else {}
-        sauceLabs: testName: 'Tab Ahead'
-        tags: tags
+        browsers: if process.env.CI then ['ChromeHeadless', 'FirefoxHeadless'] else ['Chrome', 'Firefox']
         # sometimes Windows seems to be quiet slow...
         captureTimeout: 2 * 120000
