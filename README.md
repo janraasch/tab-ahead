@@ -1,11 +1,14 @@
-![TabAhead](https://raw.github.com/janraasch/tab-ahead/master/app/images/icon-128.png)
-Tab Ahead
+Tab Ahead [![CI](https://github.com/janraasch/tab-ahead/actions/workflows/ci.yml/badge.svg)](https://github.com/janraasch/tab-ahead/actions/workflows/ci.yml)
 ==============================
-[![Build Status](https://travis-ci.org/janraasch/tab-ahead.svg?branch=master)](https://travis-ci.org/janraasch/tab-ahead) [![Coverage Status](https://img.shields.io/coveralls/janraasch/tab-ahead.svg)](https://coveralls.io/r/janraasch/tab-ahead?branch=master)
 
 Lightweight [Chrome Extension][chrome-extension-url] / [Firefox Add-On][firefox-addon-url] / [Microsoft Edge Add-On](#installation) that helps you to quickly find open tabs by title and url.
 
 *Bringing Visual Studio Code's `Goto Anything...` to your Browser Tabs.*
+
+Logo
+--------
+
+![TabAhead](https://raw.github.com/janraasch/tab-ahead/master/app/images/icon-128.png) 
 
 Installation
 ------------
