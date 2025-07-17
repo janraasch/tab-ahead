@@ -124,15 +124,6 @@ module.exports = (grunt) ->
             html: ['<%= yeoman.dist %>/{,*/}*.html']
             css: ['<%= yeoman.dist %>/styles/{,*/}*.css']
 
-        imagemin:
-            dist:
-                files: [
-                    expand: true
-                    cwd: '<%= yeoman.app %>/images'
-                    src: '{,*/}*.{png,jpg,jpeg}'
-                    dest: '<%= yeoman.dist %>/images'
-                ]
-
         htmlmin:
             dist:
                 options:
@@ -158,9 +149,13 @@ module.exports = (grunt) ->
                     '<%= yeoman.dist %>/manifest.json': [
                         '<%= yeoman.app %>/manifest.json'
                     ]
-                    '<%= yeoman.dist %>/images/insert-coins-ff7700.svg': [
-                        '<%= yeoman.app %>/images/insert-coins-ff7700.svg'
-                    ]
+            images:
+                files: [
+                    expand: true
+                    cwd: '<%= yeoman.app %>/images'
+                    src: '{,*/}*.{png,jpg,jpeg,svg}'
+                    dest: '<%= yeoman.dist %>/images'
+                ]
 
         purifycss:
             popup:
@@ -186,7 +181,7 @@ module.exports = (grunt) ->
                 'karma:e2e'
             ]
             dist: [
-                'imagemin'
+                'copy:images'
                 'htmlmin'
             ]
 
