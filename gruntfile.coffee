@@ -206,10 +206,6 @@ module.exports = (grunt) ->
                 'bower.json'
             ]
 
-        shell:
-            coveralls:
-                command: 'cat <%= yeoman.coverage %>/*/lcov.info | ./node_modules/coveralls/bin/coveralls.js'
-
     grunt.registerMultiTask 'updateVersion',
         'Update the version key of .json files.', ->
 
