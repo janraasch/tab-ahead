@@ -49,6 +49,7 @@ We do not find you to be all that interesting. Your questionable browsing histor
 
 Version History
 ------------
+* v1.6.0 - Update manifest to v3.
 * v1.5.0 - Improve fuzzy search by updating [Fuse.js](http://kiro.me/projects/fuse.html) from `v2` to `v6`. Initial release for Microsoft Edge.
 * v1.4.0 - Add dark color scheme for dark mode.
 * v1.3.1 - Initial release for Firefox. Previously this extension was only available on the Chrome browser.
