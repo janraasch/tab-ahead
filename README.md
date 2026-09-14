@@ -50,10 +50,10 @@ We do not find you to be all that interesting. Your questionable browsing histor
 Version History
 ------------
 * v1.6.0 - Update manifest to v3.
-* v1.5.0 - Improve fuzzy search by updating [Fuse.js](http://kiro.me/projects/fuse.html) from `v2` to `v6`. Initial release for Microsoft Edge.
+* v1.5.0 - Improve fuzzy search by updating [Fuse.js](https://kiro.me/projects/fuse.html) from `v2` to `v6`. Initial release for Microsoft Edge.
 * v1.4.0 - Add dark color scheme for dark mode.
 * v1.3.1 - Initial release for Firefox. Previously this extension was only available on the Chrome browser.
-* v1.3.0 - Improve fuzzy filter ([Fuse.js](http://kiro.me/projects/fuse.html)) and disable autocomplete on search input.
+* v1.3.0 - Improve fuzzy filter ([Fuse.js](https://kiro.me/projects/fuse.html)) and disable autocomplete on search input.
 * v1.2.2 - Equal margins for search input field.
 * v1.2.1 - Even faster popup response time.
 * v1.2.0 - Faster popup opening by reducing css asset size by two thirds.
@@ -66,17 +66,17 @@ Version History
 * v1.0.4 - Fix UI glitch.
 * v1.0.3 - Improve UI.
 * v1.0.2 - Small improvements.
-* v1.0.1 - Add [fuzzy](http://mattyork.github.io/fuzzy/) search.
+* v1.0.1 - Add [fuzzy](https://mattyork.github.io/fuzzy/) search.
 * v1.0.0 - Initial release.
 
 
 Special Thanks 🎁
 ------------
-* [Fuse.js](http://kiro.me/projects/fuse.html) for the `fuzzy` filter.
-* [Bootstrap](http://twitter.github.io/bootstrap/) for the `<input id="typeahead">` field.
-* [Flatstrap](http://littlesparkvt.com/flatstrap/) for the lack of rounded corners and gradients.
-* [Font Awesome](http://fortawesome.github.io/Font-Awesome/) for the logo, i.e. `icon-folder-close (&#xf07b;)` + `icon-terminal (&#xf120;)`.
-* [Sublime Text](http://www.sublimetext.com/) for the inspiration i.e. `command+T/P` on OSX, `ctrl+P` on Linux and Windows.
+* [Fuse.js](https://kiro.me/projects/fuse.html) for the `fuzzy` filter.
+* [Bootstrap](https://twitter.github.io/bootstrap/) for the `<input id="typeahead">` field.
+* [Flatstrap](https://littlesparkvt.com/flatstrap/) for the lack of rounded corners and gradients.
+* [Font Awesome](https://fortawesome.github.io/Font-Awesome/) for the logo, i.e. `icon-folder-close (&#xf07b;)` + `icon-terminal (&#xf120;)`.
+* [Sublime Text](https://www.sublimetext.com/) for the inspiration i.e. `command+T/P` on OSX, `ctrl+P` on Linux and Windows.
 * [Christian](https://proagile.de/) for helping me out with the popup icon.
 
 Alternatives
@@ -89,7 +89,7 @@ Alternatives
 
 Contributing
 --------------
-Pull requests and constructive issues are very welcome. In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt](http://gruntjs.com/).
+Pull requests and constructive issues are very welcome. In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt](https://gruntjs.com/).
 
 ### Available Grunt Commands
 * `grunt test` for linting and running tests.
@@ -106,7 +106,7 @@ This project and its contents are open source under the MIT license.
 [github-sponsors]: https://github.com/sponsors/janraasch
 [paypal-svg]: https://img.shields.io/badge/onetime-donation-11dde2.svg?logo=paypal
 [github-sponsors-svg]: https://img.shields.io/badge/recurring-sponsorship-ee4aaa.svg?logo=github
-[firefox-addon-url]: https://addons.mozilla.org/en-US/firefox/addon/tab-ahead-firefox/
+[firefox-addon-url]: https://addons.mozilla.org/firefox/addon/tab-ahead-firefox/
 [chrome-extension-url]: https://chrome.google.com/webstore/detail/tab-ahead/naoajjeoiblmpegfelhkapanmmaaghmi
 [edge-addon-url]: https://microsoftedge.microsoft.com/addons/detail/tab-ahead/mlphickdkheghookfcfopknnoedflmjl
 [chrome-web-store-image]: https://raw.github.com/janraasch/tab-ahead/master/assets/app_store_icons/ChromeWebStore_BadgeWBorder_v2_206x58.png
